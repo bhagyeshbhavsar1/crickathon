@@ -1,28 +1,69 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import CoachChat from '../components/CoachChat';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import { useSquadStore } from '../store/useSquadStore';
 
 const AICoach = () => {
+    const { draftedPlayers, budget } = useSquadStore();
+    const [messages, setMessages] = useState([
+        { sender: 'ai', text: "Hello! I am your AI Strategy Coach. Ask me anything about team balance, player stats, or match-ups based on your current squad." }
+    ]);
+    const [inputValue, setInputValue] = useState('');
+    const [isTyping, setIsTyping] = useState(false);
+    const chatEndRef = useRef(null);
+
+    const scrollToBottom = () => {
+        chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
+
+    const handleSendMessage = async (customText = null) => {
+        const textToSend = customText || inputValue;
+        if (!textToSend.trim()) return;
+
+        // Add user message
+        const newMessages = [...messages, { sender: 'user', text: textToSend }];
+        setMessages(newMessages);
+        setInputValue('');
+        setIsTyping(true);
+
+        try {
+            const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+            if (!apiKey) throw new Error("API Key missing");
+            const genAI = new GoogleGenerativeAI(apiKey);
+            const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
+
+            const currentSquad = draftedPlayers.map(p => `${p.name} (${p.role})`).join(", ");
+            const prompt = `You are an AI Strategy Coach for an IPL cricket team.
+The user currently has these drafted players: [${currentSquad || 'None'}].
+Remaining budget: ₹${budget} Cr.
+The user says: "${textToSend}"
+Provide a brief, tactical, and helpful response. Keep it under 3-4 sentences.`;
+
+            const result = await model.generateContent(prompt);
+            const responseText = result.response.text();
+            
+            setMessages([...newMessages, { sender: 'ai', text: responseText }]);
+        } catch (error) {
+            console.error(error);
+            setMessages([...newMessages, { sender: 'ai', text: "Sorry, I am experiencing technical difficulties analyzing that request." }]);
+        } finally {
+            setIsTyping(false);
+        }
+    };
+
     return (
         <motion.div 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             className="p-4 md:p-8 max-w-6xl mx-auto space-y-8 h-full overflow-y-auto pb-24 lg:pb-8"
         >
-            {/* Verdict Section */}
-            <section className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-l-4 border-red-600 pl-4 md:pl-8 py-4 bg-white/30 rounded-r-xl">
-                <div>
-                    <span className="font-label-red text-red-600 tracking-widest uppercase mb-1 block text-sm">Season Analysis Outlook</span>
-                    <h1 className="font-display-xl text-3xl md:text-5xl text-on-surface uppercase italic">CHAMPION MATERIAL</h1>
-                </div>
-                <motion.button 
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 bg-white border border-slate-200 px-6 py-2 rounded-full shadow-sm hover:bg-slate-50 transition-all group"
-                >
-                    <div className="w-5 h-5 border-2 border-transparent border-t-red-600 rounded-full animate-spin"></div>
-                    <span className="font-label-red text-red-600 uppercase text-sm">Re-Analyze Pool</span>
-                </motion.button>
-            </section>
+            {/* Dynamic AI Engine Section */}
+            <CoachChat />
 
             {/* Bento Grid Tactical Breakdown */}
             <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -72,126 +113,68 @@ const AICoach = () => {
                 </motion.div>
             </section>
 
-            {/* Suggested Trade Box */}
-            <section className="glass-card p-6 md:p-10 rounded-xl border-l-8 border-red-600 relative overflow-hidden group">
-                <div className="absolute right-0 top-0 h-full w-1/2 md:w-1/3 opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity">
-                    <img alt="Stadium" className="h-full w-full object-cover" src="/assets/stadium-bg.jpg" />
-                </div>
-                <div className="relative z-10 space-y-6">
-                    <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-red-600 text-3xl">swap_horizontal_circle</span>
-                        <h2 className="font-headline-lg text-2xl md:text-3xl text-on-surface uppercase">Recommended Trade</h2>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div className="space-y-4">
-                            <p className="text-base text-slate-500">To fix the death bowling economy crisis, the AI recommends swapping an overseas specialist.</p>
-                            
-                            <div className="flex items-center gap-4 p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
-                                <div className="flex flex-col items-center">
-                                    <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center">
-                                        <span className="material-symbols-outlined text-slate-400">person</span>
-                                    </div>
-                                    <span className="text-xs font-bold text-red-600 mt-1 uppercase">Out</span>
-                                </div>
-                                <div className="flex-1">
-                                    <h4 className="font-headline-md text-lg">D. Warner</h4>
-                                    <p className="text-sm text-slate-500">₹12.5 Cr | Batter</p>
-                                </div>
-                                
-                                <motion.span 
-                                    animate={{ x: [0, 5, 0] }}
-                                    transition={{ repeat: Infinity, duration: 1.5 }}
-                                    className="material-symbols-outlined text-slate-300"
-                                >
-                                    trending_flat
-                                </motion.span>
-                                
-                                <div className="flex flex-col items-center">
-                                    <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center">
-                                        <span className="material-symbols-outlined text-white">person</span>
-                                    </div>
-                                    <span className="text-xs font-bold text-red-600 mt-1 uppercase">In</span>
-                                </div>
-                                <div className="flex-1">
-                                    <h4 className="font-headline-md text-lg">M. Starc</h4>
-                                    <p className="text-sm text-slate-500">₹10.5 Cr | Bowler</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className="flex flex-col justify-center gap-4">
-                            <div className="bg-red-50 p-4 rounded-lg border border-red-100">
-                                <div className="flex justify-between mb-2">
-                                    <span className="text-sm font-semibold text-red-600 uppercase">Projected Impact</span>
-                                    <span className="text-sm font-bold text-red-600">+12% Win Chance</span>
-                                </div>
-                                <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-                                    <motion.div 
-                                        initial={{ width: 0 }}
-                                        whileInView={{ width: '78%' }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 1, ease: "easeOut" }}
-                                        className="bg-red-600 h-full"
-                                    ></motion.div>
-                                </div>
-                            </div>
-                            <motion.button 
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="w-full bg-red-600 text-white py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-red-700 transition-all shadow-md"
-                            >
-                                Execute Swap
-                            </motion.button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
 
             {/* Ask the Coach Chat UI */}
-            <section className="glass-card p-4 md:p-6 rounded-2xl shadow-xl border-slate-200">
-                <div className="flex flex-col gap-4">
-                    <div className="flex items-center gap-4 px-4 border-b border-slate-100 pb-3">
-                        <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center shadow-lg relative">
-                            <span className="material-symbols-outlined text-white">smart_toy</span>
-                            <span className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
-                        </div>
-                        <div>
-                            <h3 className="font-headline-md text-lg">Ask Strategy Coach</h3>
-                            <p className="text-xs text-slate-400">AI-Powered Insights based on 10k simulations</p>
-                        </div>
+            <section className="glass-card p-4 md:p-6 rounded-2xl shadow-xl border-slate-200 flex flex-col h-[500px]">
+                <div className="flex items-center gap-4 px-4 border-b border-slate-100 pb-3 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center shadow-lg relative">
+                        <span className="material-symbols-outlined text-white">smart_toy</span>
+                        <span className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
                     </div>
-                    
-                    <div className="px-4 py-2 flex flex-col gap-4">
-                        <div className="bg-slate-50 p-4 rounded-xl text-sm text-slate-600 self-start max-w-[80%] border border-slate-100">
-                            How should I balance the budget if I pick Virat Kohli as my captain?
-                        </div>
+                    <div>
+                        <h3 className="font-headline-md text-lg">Ask Strategy Coach</h3>
+                        <p className="text-xs text-slate-400">AI-Powered Insights based on 10k simulations</p>
+                    </div>
+                </div>
+                
+                <div className="flex-1 px-4 py-4 flex flex-col gap-4 overflow-y-auto scrollbar-hide">
+                    {messages.map((msg, idx) => (
                         <motion.div 
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.5 }}
-                            className="bg-red-50 p-4 rounded-xl text-sm text-red-900 self-end max-w-[80%] border border-red-100"
+                            key={idx}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className={`${msg.sender === 'user' ? 'bg-slate-50 border-slate-200 self-end' : 'bg-red-50 border-red-100 self-start'} p-4 rounded-xl text-sm max-w-[80%] border shadow-sm`}
                         >
-                            <p className="font-bold mb-1">AI Coach:</p>
-                            If you pick Kohli (₹18.00 Cr), you'll need to find value in uncapped players for your middle order. I recommend scouting for all-rounders under ₹3.0 Cr to maintain balance.
+                            {msg.sender === 'ai' && <p className="font-bold mb-1 text-red-900">AI Coach:</p>}
+                            <p className={msg.sender === 'user' ? 'text-slate-700' : 'text-red-900'}>{msg.text}</p>
                         </motion.div>
+                    ))}
+                    {isTyping && (
+                        <div className="bg-red-50 border border-red-100 p-4 rounded-xl text-sm self-start max-w-[80%] flex items-center gap-2 shadow-sm">
+                            <span className="w-2 h-2 bg-red-400 rounded-full animate-bounce"></span>
+                            <span className="w-2 h-2 bg-red-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></span>
+                            <span className="w-2 h-2 bg-red-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></span>
+                        </div>
+                    )}
+                    <div ref={chatEndRef} />
+                </div>
+                
+                <div className="flex-shrink-0 pt-2 border-t border-slate-100">
+                    <div className="flex gap-2 px-4 pb-3 overflow-x-auto whitespace-nowrap scrollbar-hide">
+                        <button onClick={() => handleSendMessage("Who are the best death bowlers available?")} className="text-xs font-bold border border-slate-200 px-4 py-1.5 rounded-full hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all">Best death bowlers?</button>
+                        <button onClick={() => handleSendMessage("Do I have enough spin utility?")} className="text-xs font-bold border border-slate-200 px-4 py-1.5 rounded-full hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all">Spin utility check</button>
+                        <button onClick={() => handleSendMessage("Who are the best budget picks under 2Cr?")} className="text-xs font-bold border border-slate-200 px-4 py-1.5 rounded-full hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all">Budget picks under 2Cr</button>
                     </div>
-                    
-                    <div className="relative flex items-center gap-2 mt-2">
-                        <input className="w-full bg-white border border-slate-200 focus:ring-red-600 focus:border-red-600 rounded-full px-6 py-3 text-sm shadow-inner" placeholder="Ask about team balance, player stats, or match-ups..." type="text" />
+
+                    <div className="relative flex items-center gap-2 px-2">
+                        <input 
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
+                            className="w-full bg-white border border-slate-200 focus:ring-red-600 focus:border-red-600 rounded-full px-6 py-3 text-sm shadow-inner outline-none" 
+                            placeholder="Ask about team balance, player stats, or match-ups..." 
+                            type="text" 
+                        />
                         <motion.button 
+                            onClick={() => handleSendMessage()}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            className="absolute right-2 p-2 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-all"
+                            disabled={isTyping}
+                            className="absolute right-4 p-2 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-all disabled:opacity-50"
                         >
                             <span className="material-symbols-outlined">send</span>
                         </motion.button>
-                    </div>
-                    
-                    <div className="flex gap-2 px-4 pb-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
-                        <button className="text-xs font-bold border border-slate-200 px-4 py-1.5 rounded-full hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all">Best death bowlers?</button>
-                        <button className="text-xs font-bold border border-slate-200 px-4 py-1.5 rounded-full hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all">Spin utility check</button>
-                        <button className="text-xs font-bold border border-slate-200 px-4 py-1.5 rounded-full hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all">Budget picks under 2Cr</button>
                     </div>
                 </div>
             </section>

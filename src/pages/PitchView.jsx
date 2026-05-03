@@ -3,7 +3,24 @@ import { motion } from 'framer-motion';
 import { useSquadStore } from '../store/useSquadStore';
 
 const PitchView = () => {
-    const { draftedPlayers, budget } = useSquadStore();
+    const { draftedPlayers, budget, availablePlayers } = useSquadStore();
+
+    let suggestedSwap = null;
+    if (draftedPlayers.length > 0 && availablePlayers.length > 0) {
+        for (const player of draftedPlayers) {
+            const availableBudget = budget + player.price;
+            const upgrades = availablePlayers.filter(ap => 
+                ap.role === player.role && 
+                ap.rating > player.rating && 
+                ap.price <= availableBudget
+            );
+            if (upgrades.length > 0) {
+                upgrades.sort((a, b) => b.rating - a.rating);
+                suggestedSwap = { drop: player, add: upgrades[0] };
+                break;
+            }
+        }
+    }
 
     // Map drafted players to roles for the grid
     const wk = draftedPlayers.filter(p => p.role === 'Wicket-keeper');
@@ -120,13 +137,28 @@ const PitchView = () => {
                                     {bats.length < 3 ? "Need more top-order batsmen for stability." : "Top order looks solid."}
                                 </p>
                             </motion.div>
+
+                            <motion.div whileHover={{ scale: 1.02 }} className="p-4 bg-red-50/80 rounded-xl border border-red-200 shadow-sm">
+                                <p className="text-[10px] font-bold text-red-600 uppercase mb-2">Tactical Weakness</p>
+                                <p className="text-sm font-medium text-slate-700 leading-relaxed">
+                                    {draftedPlayers.length === 0 ? "No players drafted." :
+                                     bwls.length < 3 ? "Bowling attack lacks depth. Highly vulnerable in death overs." : 
+                                     ars.length < 2 ? "Middle-order stability compromised. Lacking dual-threat options." :
+                                     wk.length === 0 ? "No specialized wicket-keeper drafted yet." :
+                                     "No glaring tactical weaknesses currently identified."}
+                                </p>
+                            </motion.div>
                             
                             <motion.div whileHover={{ scale: 1.02 }} className="p-4 bg-white/60 rounded-xl border border-slate-200 shadow-sm">
                                 <p className="text-[10px] font-bold text-slate-500 uppercase mb-2">AI Recommendation</p>
                                 <div className="text-xs font-medium text-slate-600 leading-relaxed font-mono space-y-1">
                                     <p className="text-slate-400">&gt; Analyzing squad composition...</p>
                                     <p>&gt; Missing slots: {11 - draftedPlayers.length}</p>
-                                    <p className="text-red-600">&gt; Strategy: {totalInvestment > 80 ? "Conserve Budget" : "Aggressive Bidding"}</p>
+                                    {suggestedSwap ? (
+                                        <p className="text-green-600 font-bold">&gt; UPGRADE: Swap {suggestedSwap.drop.name} ({suggestedSwap.drop.rating}) for {suggestedSwap.add.name} ({suggestedSwap.add.rating}) within budget!</p>
+                                    ) : (
+                                        <p className="text-red-600">&gt; Strategy: {totalInvestment > 80 ? "Conserve Budget" : "Aggressive Bidding"}</p>
+                                    )}
                                 </div>
                             </motion.div>
                         </div>

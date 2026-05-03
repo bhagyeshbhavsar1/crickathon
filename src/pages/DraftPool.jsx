@@ -38,12 +38,32 @@ const DraggablePlayer = ({ player }) => {
                 <div>
                     <h4 className="font-bold text-sm uppercase">{player.name}</h4>
                     <div className="flex gap-1 mt-1">
-                        {Array.from({ length: player.stars }).map((_, i) => (
+                        {Array.from({ length: player.stars || Math.floor(player.rating / 20) }).map((_, i) => (
                             <span key={i} className="material-symbols-outlined text-[12px] text-yellow-500" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                         ))}
                     </div>
                 </div>
             </div>
+            {player.recentMatchStats && (
+                <div className="mt-3 bg-white/50 p-2 rounded-lg text-[9px] text-slate-500 grid grid-cols-2 gap-x-2 gap-y-1 border border-slate-100">
+                    <div className="flex justify-between">
+                        <span className="font-bold text-slate-600">HS/Avg:</span> 
+                        <span>{player.recentMatchStats.highScore !== "N/A" ? player.recentMatchStats.highScore : (player.recentMatchStats.avg || "N/A")}</span>
+                    </div>
+                    <div className="flex justify-between">
+                        <span className="font-bold text-slate-600">SR:</span> 
+                        <span>{player.recentMatchStats.strikeRate}</span>
+                    </div>
+                    <div className="flex justify-between">
+                        <span className="font-bold text-slate-600">BF:</span> 
+                        <span>{player.recentMatchStats.bestFigures}</span>
+                    </div>
+                    <div className="flex justify-between">
+                        <span className="font-bold text-slate-600">Econ:</span> 
+                        <span>{player.recentMatchStats.economyRate}</span>
+                    </div>
+                </div>
+            )}
         </motion.div>
     );
 };
