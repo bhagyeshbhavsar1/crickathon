@@ -1,152 +1,398 @@
 [
     {
         "id": "p1",
-        "name": "Virat Kohli",
-        "team": "RCB",
-        "role": "BAT",
-        "price": 18.00,
-        "rating": 95,
-        "image": "/assets/kohli.jpg",
-        "stars": 5
+        "name": "MS Dhoni",
+        "team": "CSK",
+        "role": "Wicket-keeper",
+        "rating": 88,
+        "price": 5.5,
+        "image": "/assets/avatar.jpg"
     },
     {
         "id": "p2",
-        "name": "Rohit Sharma",
-        "team": "MI",
-        "role": "BAT",
-        "price": 16.00,
+        "name": "Ruturaj Gaikwad",
+        "team": "CSK",
+        "role": "Batter",
         "rating": 92,
-        "image": "/assets/sharma.jpg",
-        "stars": 5
+        "price": 10.5,
+        "image": "/assets/avatar.jpg"
     },
     {
         "id": "p3",
-        "name": "Suryakumar Yadav",
-        "team": "MI",
-        "role": "BAT",
-        "price": 15.00,
-        "rating": 94,
-        "image": "/assets/surya.jpg",
-        "stars": 5
+        "name": "Ravindra Jadeja",
+        "team": "CSK",
+        "role": "All-rounder",
+        "rating": 95,
+        "price": 12,
+        "image": "/assets/avatar.jpg"
     },
     {
         "id": "p4",
-        "name": "MS Dhoni",
+        "name": "Matheesha Pathirana",
         "team": "CSK",
-        "role": "WK",
-        "price": 12.00,
-        "rating": 88,
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuD5mBECKu3VJpNJP2moDsJ9SdTJ-1dr1lTkc3ZItI9MivUFS48hlKTKggs0M-m19u6tEQ87m8qOBFMxIUC0hzd4vSc8n0rwoqFiOAdus0XHCpE9IbEpFM_FNSor1HWNNm1lE7Kj_Zbsse2_86NeIQD7MhOkkE8rNmHb7SugC9z0c8-_JyUc3hum9OivF5qx-xIS1-_WP8FsLi0E41D8N4kpjie5ayWuBSXHLsGyqB_FCUnI_OPmzR_MPDRyNO7QpEZEPptBycI-NF9P",
-        "stars": 4
+        "role": "Bowler",
+        "rating": 89,
+        "price": 8.5,
+        "image": "/assets/avatar.jpg"
     },
     {
         "id": "p5",
-        "name": "Rishabh Pant",
-        "team": "DC",
-        "role": "WK",
-        "price": 17.00,
-        "rating": 90,
-        "image": "/assets/pant.jpg",
-        "stars": 4
+        "name": "Rohit Sharma",
+        "team": "MI",
+        "role": "Batter",
+        "rating": 94,
+        "price": 13,
+        "image": "/assets/sharma.jpg"
     },
     {
         "id": "p6",
-        "name": "Hardik Pandya",
+        "name": "Jasprit Bumrah",
         "team": "MI",
-        "role": "AR",
-        "price": 15.00,
-        "rating": 91,
-        "image": "/assets/hardik.jpg",
-        "stars": 5
+        "role": "Bowler",
+        "rating": 98,
+        "price": 14,
+        "image": "/assets/bumrah.jpg"
     },
     {
         "id": "p7",
-        "name": "Ravindra Jadeja",
-        "team": "CSK",
-        "role": "AR",
-        "price": 16.00,
-        "rating": 93,
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCZZobMGPdGjbsEPdU3AckzNR0P4qyjvakPhIGqfGVLaA60BiVyXWUYlhdYL0jJYq6PZtoAE5hlGf4uU2Wal6aGyWrwlANSnId8JiAjo0UUj41Bbw8mFi6h3oMYshb1DKa-acx-kWrI1VLoeOZH27MxRE16wCrlgAmvcdfVtQxgRvahdBU8ZpfejhSSSp9C2vP3UNpUQYNAUILGf3RhOD8ftuUYxU8_dbi_7SY5Z2t_ArUh1ZsDKyJ9YbvAShhAMZdlugl4f1c3EZok",
-        "stars": 5
+        "name": "Suryakumar Yadav",
+        "team": "MI",
+        "role": "Batter",
+        "rating": 96,
+        "price": 13.5,
+        "image": "/assets/surya.jpg"
     },
     {
         "id": "p8",
-        "name": "Jasprit Bumrah",
+        "name": "Hardik Pandya",
         "team": "MI",
-        "role": "BWL",
-        "price": 15.00,
-        "rating": 96,
-        "image": "/assets/bumrah.jpg",
-        "stars": 5
+        "role": "All-rounder",
+        "rating": 93,
+        "price": 12.5,
+        "image": "/assets/hardik.jpg"
     },
     {
         "id": "p9",
-        "name": "Mohammed Shami",
-        "team": "GT",
-        "role": "BWL",
-        "price": 11.00,
-        "rating": 89,
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuD1fuCOopkqz1ivHEUIPSCgZxAStqg0jLePcc84sv0_OIXxnDJT3MPyolrE3HBCvRFvAz6IXeu14NMElCW4hg_eV-nDnqODDtBO7zqgHC4Hc6Jcthao3XjuLXJCQy5pI603Nxo-2TJCKUXIxtn4ntckDScldxsKZ3xYzJRtPiH2t15h8i81SF7yPo9HmkXhYSY4YfpgWKqIYU-ngmHHFh3skym7WTDX8lyJG-qxJprItU7q8VJuWHzswZ2jTowI3hb5O1mntLiyKtVz",
-        "stars": 4
+        "name": "Virat Kohli",
+        "team": "RCB",
+        "role": "Batter",
+        "rating": 97,
+        "price": 14,
+        "image": "/assets/kohli.jpg"
     },
     {
         "id": "p10",
-        "name": "Kuldeep Yadav",
-        "team": "DC",
-        "role": "BWL",
-        "price": 9.50,
-        "rating": 88,
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDsvJAhB1RUB98NI2q-AzOAjUxtDI5Ie-I_dK8mqHRaKa8XZXVbd7rM76JqkyrDLgDtaeFMVWnnaX6KVSD14r85fHuj_wo3O1AU5_6aUOceCaORHOsynzneYFciG-V8kcZVlId-5jRJy-bdcOgLowez61TwYGOdspauhs6KhPK91XKN0cRzXBPccFTjKaCeqqAknLGeM4dZfY_1_QWWBDU8iYpJ5OcGCDFU7Vbi6xtpEtIMjFocYqcYcmEoSPfr50mFF0jQBag40gXw",
-        "stars": 4
+        "name": "Glenn Maxwell",
+        "team": "RCB",
+        "role": "All-rounder",
+        "rating": 90,
+        "price": 11,
+        "image": "/assets/avatar.jpg"
     },
     {
         "id": "p11",
-        "name": "Arshdeep Singh",
-        "team": "PBKS",
-        "role": "BWL",
-        "price": 8.00,
-        "rating": 85,
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-PXpsjEVPT0K1rINy9xMRrDlCufhwwSs231sAQ2OmHhduh7vBW7VGu_U8NQbRU962CbH9y7LNvJGeSPSKPyHABhmayJCb3eka6obL6dp0qdSkv4CgadpdP_5-f2-gR3FKLjNIEWQhihl-u-xFe0eEctfoDOJODQ52X9Ty6n5pnowO8_0GezCsDu2nqg0Psa-iZfjbjNPeVoRmpxxeUCSHPC4_But6zngVkUsWHO4G6Y7FCTymdJtu7lLaa1JCL_TLaPCO2-lJ4EHx",
-        "stars": 4
+        "name": "Mohammed Siraj",
+        "team": "RCB",
+        "role": "Bowler",
+        "rating": 88,
+        "price": 9,
+        "image": "/assets/avatar.jpg"
     },
     {
         "id": "p12",
-        "name": "Ruturaj Gaikwad",
-        "team": "CSK",
-        "role": "BAT",
-        "price": 14.00,
-        "rating": 88,
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAlSRz1Z9XzCdUcaB0bVj2dk0hfg2LEKOtzG_TyhPaFd_uuDDBh6x780cNAzwKy3v6A7Cyyqz1jfvZVtW76yQV9-jKYqIi9SnIY0ZcGYFxiKi-4Tb9LeICSZjj-I60owPYY9QVaDAca0TSD9eFT2HPD2M6gFjLJxALad47uqvDjyD4iJAUfhXoTSWdeEpopTs1iamTWF2hkmIyEFTytgsCrOptUrqAEBguPHE3odf5mdvTgcLZmmn4NVdlqrwYQnTEeNQPHTOTw8nS1",
-        "stars": 4
+        "name": "Rajat Patidar",
+        "team": "RCB",
+        "role": "Batter",
+        "rating": 85,
+        "price": 6.5,
+        "image": "/assets/avatar.jpg"
     },
     {
         "id": "p13",
-        "name": "Sunil Narine",
+        "name": "Shreyas Iyer",
         "team": "KKR",
-        "role": "AR",
-        "price": 10.00,
+        "role": "Batter",
         "rating": 89,
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDR6H1HCyX021ttIFbQ084-FK8U7-esBYDpJZmV7knfg821A0EBBNLPvIFusVCxkB58n9ZtfEHrXNnLICBKiJf7qta9KXr_5r3-LdROO0RP2vYIqt9QbnMl1CP3udlfQ7zILnwnWTQ-GaWhjMJMpsSmmCSLae4hiqBN0U203K2aR9fDuFFLe_R_ZcN1JkyMyOvVklWemSwKgMl_19VPJKhjy3mwZFYSzUH-Hnsw0fRQcRgojupf1nxN3wPY62mfKMr_j8JXZQcxVnaJ",
-        "stars": 4
+        "price": 10,
+        "image": "/assets/avatar.jpg"
     },
     {
         "id": "p14",
-        "name": "Rashid Khan",
-        "team": "GT",
-        "role": "BWL",
-        "price": 16.00,
+        "name": "Sunil Narine",
+        "team": "KKR",
+        "role": "All-rounder",
         "rating": 94,
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBvUG2XuNtrpndFgqgfPdzFVRiZwBkP3dGdWvu-YpYFl8XmQ8THVJDTv6Y37hFKr0fXgGzW7PqJgRSJ3hNDk56_0QndaNEJwF1DLoUZszZjlqXfLq4cNjAI8bqBHUEw_Exopi9ktq4oKksh5D8K4nGzvS5kUM5LB4zg9n1fQyOWofomvSiRAwLtH9nwP0Iq8FPxy4mDXaCv0WJev-fIbHxAtOEczpznr8dqBm_byUkHCcMEZhCXiXQ8bUu1vWkp2HEhgeOoLLlqKLHH",
-        "stars": 5
+        "price": 11.5,
+        "image": "/assets/avatar.jpg"
     },
     {
         "id": "p15",
-        "name": "Matheesha Pathirana",
-        "team": "CSK",
-        "role": "BWL",
-        "price": 8.50,
+        "name": "Rinku Singh",
+        "team": "KKR",
+        "role": "Batter",
+        "rating": 91,
+        "price": 9.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p16",
+        "name": "Mitchell Starc",
+        "team": "KKR",
+        "role": "Bowler",
+        "rating": 92,
+        "price": 13,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p17",
+        "name": "Pat Cummins",
+        "team": "SRH",
+        "role": "All-rounder",
+        "rating": 93,
+        "price": 12,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p18",
+        "name": "Travis Head",
+        "team": "SRH",
+        "role": "Batter",
+        "rating": 95,
+        "price": 13.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p19",
+        "name": "Heinrich Klaasen",
+        "team": "SRH",
+        "role": "Wicket-keeper",
+        "rating": 96,
+        "price": 12.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p20",
+        "name": "Bhuvneshwar Kumar",
+        "team": "SRH",
+        "role": "Bowler",
+        "rating": 87,
+        "price": 7.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p21",
+        "name": "Sanju Samson",
+        "team": "RR",
+        "role": "Wicket-keeper",
+        "rating": 92,
+        "price": 11.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p22",
+        "name": "Yashasvi Jaiswal",
+        "team": "RR",
+        "role": "Batter",
+        "rating": 94,
+        "price": 12,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p23",
+        "name": "Jos Buttler",
+        "team": "RR",
+        "role": "Wicket-keeper",
+        "rating": 95,
+        "price": 13,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p24",
+        "name": "Yuzvendra Chahal",
+        "team": "RR",
+        "role": "Bowler",
+        "rating": 91,
+        "price": 10,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p25",
+        "name": "Rishabh Pant",
+        "team": "DC",
+        "role": "Wicket-keeper",
+        "rating": 93,
+        "price": 12.5,
+        "image": "/assets/pant.jpg"
+    },
+    {
+        "id": "p26",
+        "name": "Axar Patel",
+        "team": "DC",
+        "role": "All-rounder",
+        "rating": 90,
+        "price": 9.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p27",
+        "name": "Kuldeep Yadav",
+        "team": "DC",
+        "role": "Bowler",
+        "rating": 92,
+        "price": 10.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p28",
+        "name": "Jake Fraser-McGurk",
+        "team": "DC",
+        "role": "Batter",
+        "rating": 89,
+        "price": 8.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p29",
+        "name": "Shikhar Dhawan",
+        "team": "PBKS",
+        "role": "Batter",
         "rating": 86,
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-PXpsjEVPT0K1rINy9xMRrDlCufhwwSs231sAQ2OmHhduh7vBW7VGu_U8NQbRU962CbH9y7LNvJGeSPSKPyHABhmayJCb3eka6obL6dp0qdSkv4CgadpdP_5-f2-gR3FKLjNIEWQhihl-u-xFe0eEctfoDOJODQ52X9Ty6n5pnowO8_0GezCsDu2nqg0Psa-iZfjbjNPeVoRmpxxeUCSHPC4_But6zngVkUsWHO4G6Y7FCTymdJtu7lLaa1JCL_TLaPCO2-lJ4EHx",
-        "stars": 4
+        "price": 7,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p30",
+        "name": "Sam Curran",
+        "team": "PBKS",
+        "role": "All-rounder",
+        "rating": 88,
+        "price": 11,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p31",
+        "name": "Arshdeep Singh",
+        "team": "PBKS",
+        "role": "Bowler",
+        "rating": 90,
+        "price": 9.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p32",
+        "name": "Liam Livingstone",
+        "team": "PBKS",
+        "role": "All-rounder",
+        "rating": 89,
+        "price": 10,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p33",
+        "name": "KL Rahul",
+        "team": "LSG",
+        "role": "Wicket-keeper",
+        "rating": 92,
+        "price": 13,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p34",
+        "name": "Nicholas Pooran",
+        "team": "LSG",
+        "role": "Wicket-keeper",
+        "rating": 94,
+        "price": 12.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p35",
+        "name": "Marcus Stoinis",
+        "team": "LSG",
+        "role": "All-rounder",
+        "rating": 89,
+        "price": 10.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p36",
+        "name": "Ravi Bishnoi",
+        "team": "LSG",
+        "role": "Bowler",
+        "rating": 88,
+        "price": 8,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p37",
+        "name": "Shubman Gill",
+        "team": "GT",
+        "role": "Batter",
+        "rating": 95,
+        "price": 13.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p38",
+        "name": "Rashid Khan",
+        "team": "GT",
+        "role": "Bowler",
+        "rating": 96,
+        "price": 14,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p39",
+        "name": "Sai Sudharsan",
+        "team": "GT",
+        "role": "Batter",
+        "rating": 89,
+        "price": 8.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p40",
+        "name": "Mohammad Shami",
+        "team": "GT",
+        "role": "Bowler",
+        "rating": 92,
+        "price": 10.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p41",
+        "name": "Suyash Sharma",
+        "team": "KKR",
+        "role": "Bowler",
+        "rating": 78,
+        "price": 3.5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p42",
+        "name": "Nehal Wadhera",
+        "team": "MI",
+        "role": "Batter",
+        "rating": 80,
+        "price": 4,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p43",
+        "name": "Dhruv Jurel",
+        "team": "RR",
+        "role": "Wicket-keeper",
+        "rating": 82,
+        "price": 5,
+        "image": "/assets/avatar.jpg"
+    },
+    {
+        "id": "p44",
+        "name": "Ramandeep Singh",
+        "team": "KKR",
+        "role": "All-rounder",
+        "rating": 79,
+        "price": 3.8,
+        "image": "/assets/avatar.jpg"
     }
 ]

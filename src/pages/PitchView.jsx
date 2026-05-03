@@ -6,10 +6,10 @@ const PitchView = () => {
     const { draftedPlayers, budget } = useSquadStore();
 
     // Map drafted players to roles for the grid
-    const wk = draftedPlayers.filter(p => p.role === 'WK');
-    const bats = draftedPlayers.filter(p => p.role === 'BAT');
-    const ars = draftedPlayers.filter(p => p.role === 'AR');
-    const bwls = draftedPlayers.filter(p => p.role === 'BWL');
+    const wk = draftedPlayers.filter(p => p.role === 'Wicket-keeper');
+    const bats = draftedPlayers.filter(p => p.role === 'Batter');
+    const ars = draftedPlayers.filter(p => p.role === 'All-rounder');
+    const bwls = draftedPlayers.filter(p => p.role === 'Bowler');
 
     const totalInvestment = 100 - budget;
 
@@ -86,6 +86,7 @@ const PitchView = () => {
                     <div className="flex justify-evenly relative z-10 mt-8">
                         {renderPlayer(ars[0], 'AR')}
                         {renderPlayer(ars[1], 'AR')}
+                        {renderPlayer(ars[2], 'AR')}
                     </div>
 
                     {/* Bowlers */}

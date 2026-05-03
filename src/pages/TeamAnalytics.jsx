@@ -7,17 +7,17 @@ const TeamAnalytics = () => {
 
     // Calculate dynamic stats
     const totalInvestment = 100 - budget;
-    const batsmanCount = draftedPlayers.filter(p => p.role === 'BAT' || p.role === 'WK').length;
-    const bowlerCount = draftedPlayers.filter(p => p.role === 'BWL').length;
-    const arCount = draftedPlayers.filter(p => p.role === 'AR').length;
+    const batsmanCount = draftedPlayers.filter(p => p.role === 'Batter' || p.role === 'Wicket-keeper').length;
+    const bowlerCount = draftedPlayers.filter(p => p.role === 'Bowler').length;
+    const arCount = draftedPlayers.filter(p => p.role === 'All-rounder').length;
     
     // Balance Index (mock calculation based on roles)
     const isBalanced = batsmanCount >= 3 && bowlerCount >= 3;
     const balanceScore = isBalanced ? 92 : (draftedPlayers.length > 0 ? 65 + draftedPlayers.length : 0);
 
-    const batSpend = draftedPlayers.filter(p => p.role === 'BAT' || p.role === 'WK').reduce((acc, p) => acc + p.price, 0);
-    const bwlSpend = draftedPlayers.filter(p => p.role === 'BWL').reduce((acc, p) => acc + p.price, 0);
-    const arSpend = draftedPlayers.filter(p => p.role === 'AR').reduce((acc, p) => acc + p.price, 0);
+    const batSpend = draftedPlayers.filter(p => p.role === 'Batter' || p.role === 'Wicket-keeper').reduce((acc, p) => acc + p.price, 0);
+    const bwlSpend = draftedPlayers.filter(p => p.role === 'Bowler').reduce((acc, p) => acc + p.price, 0);
+    const arSpend = draftedPlayers.filter(p => p.role === 'All-rounder').reduce((acc, p) => acc + p.price, 0);
 
     const totalSpend = batSpend + bwlSpend + arSpend || 1; // Prevent division by zero
     const batPercent = (batSpend / totalSpend) * 100;
