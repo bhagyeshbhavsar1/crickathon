@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IPL SQUAD BUILDER - Elite Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;family=Lexend:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#f8f7ff",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#5c403c",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "inverse-primary": "#ffb4ab",
+                        "on-primary-fixed-variant": "#93000b",
+                        "surface-container-high": "#e6e8ea",
+                        "on-secondary-container": "#616363",
+                        "surface": "#f7f9fb",
+                        "secondary-container": "#dfe0e0",
+                        "tertiary": "#51596f",
+                        "primary": "#b70011",
+                        "inverse-surface": "#2d3133",
+                        "surface-container": "#eceef0",
+                        "primary-fixed-dim": "#ffb4ab",
+                        "background": "#f7f9fb",
+                        "primary-fixed": "#ffdad6",
+                        "on-surface": "#191c1e",
+                        "on-primary-container": "#fff6f5",
+                        "surface-tint": "#bf0715",
+                        "tertiary-container": "#6a7188",
+                        "primary-container": "#dc2626",
+                        "on-error-container": "#93000a",
+                        "secondary": "#5d5f5f",
+                        "on-primary-fixed": "#410002",
+                        "outline": "#916f6b",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed": "#131b2e",
+                        "outline-variant": "#e6bdb8",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-fixed": "#e2e2e2",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#c6c6c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-padding": "24px",
+                        "xl": "40px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "utility-sm": ["Lexend"],
+                        "display-xl": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-red": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "utility-sm": ["12px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-red": ["14px", {"lineHeight": "1", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid #E2E8F0;
+        }
+        .pitch-grid {
+            background-image: radial-gradient(circle at 2px 2px, #e2e8f0 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(220, 38, 38, 0.05) 51%, transparent 52%);
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-white/70 dark:bg-slate-900/80 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(15,23,42,0.05)] border-b border-slate-200 dark:border-slate-800 flex justify-between items-center px-6 h-20 w-full fixed top-0 z-50">
+<div class="flex items-center gap-8">
+<h1 class="text-2xl font-black text-red-600 dark:text-red-500 uppercase italic tracking-tighter">IPL SQUAD BUILDER</h1>
+<div class="relative w-96 h-10 bg-slate-100 rounded-full overflow-hidden flex items-center px-4">
+<span class="material-symbols-outlined text-slate-400 mr-2">search</span>
+<input class="bg-transparent border-none outline-none w-full text-sm font-body-md" placeholder="Search players..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex flex-col items-end">
+<span class="text-xs font-label-red text-slate-500 uppercase tracking-widest">Available Budget</span>
+<div class="flex items-center gap-3">
+<div class="w-48 h-2 bg-slate-200 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-500" style="width: 74%"></div>
+</div>
+<span class="font-['Inter'] font-bold tracking-tight text-red-600 dark:text-red-500">Budget: ₹100.00 Cr</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-red-50/50 transition-all duration-200">
+<span class="material-symbols-outlined text-slate-500" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-red-50/50 transition-all duration-200">
+<span class="material-symbols-outlined text-slate-500" data-icon="settings">settings</span>
+</button>
+<img alt="GM Profile Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container ml-2" data-alt="A professional close-up portrait of a modern sports executive in a clean-cut environment. The person has a focused and confident expression, illuminated by soft studio lighting that creates a bright, high-key aesthetic. The background is a minimalist office space with blurred textures of glass and white steel, reflecting a premium corporate management vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPs6rybSLRwXARVtPkSJMCoUxLnPMTW3QzPbJYA7ItuCfIwz7jxPiWKPpB_-WnmPRIR8PTqvZKt4sMLYn2xqgsb37X0bTD5FfSdxcBmNxv5igB5wsnWzpw8jRz7HhgkrtrdFRS44Txpbe9zg05DsxgERw7ksoz7IfY2rMpBNPhXasmukT15bCui2AK4dfj-HIhMhoA14q2K_3vrqPpJm2l0ON19LMYyMc7yzT0pGoSc4x4LrEggf2uRwASp20JHoe8li334xdvx_Xu"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="bg-white/70 dark:bg-slate-950/70 backdrop-blur-[20px] shadow-xl border-r border-slate-200 dark:border-slate-700 fixed left-0 top-20 h-[calc(100vh-80px)] flex flex-col pt-8 pb-4 z-40 w-64">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="sports_cricket">sports_cricket</span>
+</div>
+<div>
+<h3 class="font-headline-md text-sm uppercase tracking-widest text-on-background">Pro Management</h3>
+<p class="text-xs text-slate-400">Elite Status</p>
+</div>
+</div>
+<nav class="flex-1">
+<ul class="space-y-1">
+<li><a class="bg-red-600 text-white rounded-r-full py-3 px-6 shadow-lg shadow-red-200 flex items-center gap-4 transition-transform translate-x-1" href="#"><span class="material-symbols-outlined">groups</span><span class="font-['Inter'] text-sm uppercase tracking-widest">Draft Pool</span></a></li>
+<li><a class="text-slate-500 hover:text-red-600 py-3 px-6 flex items-center gap-4 hover:bg-slate-50 transition-colors" href="#"><span class="material-symbols-outlined">sports_cricket</span><span class="font-['Inter'] text-sm uppercase tracking-widest">Pitch View</span></a></li>
+<li><a class="text-slate-500 hover:text-red-600 py-3 px-6 flex items-center gap-4 hover:bg-slate-50 transition-colors" href="#"><span class="material-symbols-outlined">leaderboard</span><span class="font-['Inter'] text-sm uppercase tracking-widest">Team Analytics</span></a></li>
+<li><a class="text-slate-500 hover:text-red-600 py-3 px-6 flex items-center gap-4 hover:bg-slate-50 transition-colors" href="#"><span class="material-symbols-outlined">smart_toy</span><span class="font-['Inter'] text-sm uppercase tracking-widest">AI Coach</span></a></li>
+<li><a class="text-slate-500 hover:text-red-600 py-3 px-6 flex items-center gap-4 hover:bg-slate-50 transition-colors" href="#"><span class="material-symbols-outlined">history</span><span class="font-['Inter'] text-sm uppercase tracking-widest">History</span></a></li>
+</ul>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full bg-primary-container text-white py-4 rounded-xl font-bold uppercase tracking-tighter hover:scale-105 active:scale-95 transition-all shadow-lg shadow-red-200">
+                Finalize Squad
+            </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-64 mt-20 p-8 h-[calc(100vh-80px)] grid grid-cols-12 gap-8 overflow-hidden">
+<!-- Player Pool (Left Panel) -->
+<section class="col-span-3 h-full flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-lg text-primary">DRAFT POOL</h2>
+<span class="bg-slate-200 text-xs px-2 py-1 rounded font-bold">142 Players</span>
+</div>
+<div class="flex-1 overflow-y-auto pr-2 space-y-3">
+<!-- Player Card 1 -->
+<div class="glass-card p-4 rounded-xl cursor-move hover:scale-105 transition-transform">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Wicket Keeper</span>
+<span class="text-primary font-label-red">₹17.00 Cr</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-slate-100 rounded-lg overflow-hidden border-l-4 border-primary">
+<img alt="Cricket Player" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all" data-alt="A dynamic shot of a professional cricket wicket-keeper in action, crouching with focused intensity. The player is wearing a crisp white jersey with vibrant red details, set against a bright, sun-drenched stadium atmosphere. The visual style is high-clarity with a professional broadcast feel, emphasizing speed and athletic precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw-qWJpNSKF8yB7TZtYBlQX8Tl6eY6udm01pcVs7IH6FMgZ7I3Y-uluLtSxeQSCHlGwoR_n63y2M2sppfApwHfFhBsDnUfdOa2FIyoR-4oC9hbXDLNRpFe17nvrov_cSMm_Wis0GaqS3KcMjl6fi9_DjyEZwylgcrnLqsCW8mmoZEHO6j2Fx0TCEBTTSy1MdfrRt7G2vX0E7NjjG4PSt2Stzl25Qy6OmmVag5Vw8FOeKPY8ohQ4RFtG3ekB0YeS9odyQUQJddoeZX2"/>
+</div>
+<div>
+<h4 class="font-bold text-sm">RISHABH PANT</h4>
+<div class="flex gap-1 mt-1">
+<span class="material-symbols-outlined text-[12px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Player Card 2 -->
+<div class="glass-card p-4 rounded-xl cursor-move hover:scale-105 transition-transform">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Bowler</span>
+<span class="text-primary font-label-red">₹14.50 Cr</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-slate-100 rounded-lg overflow-hidden border-l-4 border-primary">
+<img alt="Cricket Player" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all" data-alt="A portrait of a focused professional cricket bowler in a powerful stance. He wears a contemporary white and red sports kit. The background is a brightly lit, modern sports facility with blurred architectural lines. The lighting is crisp, highlighting the athlete's muscular form and high-tech gear, maintaining a sleek, elite sports management aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnibYdaw-wGcs4AZeZB-GXnMmUayqMsvN22p1dXGhkPasSvBgVRFVdceqUme-Bgq2YZVncJlWR97SB8jS3wxAMCK6CwIVnMSVdoUrMwrrdHw1z1_1SDkbrLjsSyMYfe_C2ss8q-3nmFGPef37oXPkr3Wg5qiYAFQ8sLMVnn0AbOIfmWK6t2a9kdyHoiaIEJlcLH6IxlQ5ngbgANfYXX5TRiCk8lOT-45cGSuClrGZuv7gvaRpqTo43T0JQ700Tqw-LjyMIAi1lqUjU"/>
+</div>
+<div>
+<h4 class="font-bold text-sm">JASPRIT BUMRAH</h4>
+<div class="flex gap-1 mt-1">
+<span class="material-symbols-outlined text-[12px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Player Card 3 -->
+<div class="glass-card p-4 rounded-xl cursor-move hover:scale-105 transition-transform opacity-70">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Batsman</span>
+<span class="text-primary font-label-red">₹18.00 Cr</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-slate-100 rounded-lg overflow-hidden border-l-4 border-primary">
+<img alt="Cricket Player" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all" data-alt="A professional cricket batsman in full gear, standing ready at the crease. The bright midday sun illuminates the stadium, casting sharp shadows and highlighting the texture of the white uniform and red protective pads. The image captures the high-stakes energy of a major tournament, presented in a clean, minimalist photographic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvJOPKjkzF34rhG1XuH6CMopdXLbHfwviKYUPGL1WGSog2sh2-omVtg5UlbUj3imFMXvwwTdIsjLh3aMbYx8pIRCZR3v_4epxNGXkYpuiq3BArl2HlaOP3R9_IIfJ-HTpvsfH0NJRFQ_WPZzP2aRlZ9OyMH5ahGqlgj7e435g-9_KGvo5B0kX3EK0V7utZH3KjLBstuTVUWLUVWpB57M-dyYNGRgYkggLmZkwYl4Vklj9CuV1S6VQQ_unsotOC_H0Lr5F3IGCdaaA2"/>
+</div>
+<div>
+<h4 class="font-bold text-sm">VIRAT KOHLI</h4>
+<div class="flex gap-1 mt-1">
+<span class="material-symbols-outlined text-[12px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[12px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pitch View (Main Content) -->
+<section class="col-span-6 h-full relative pitch-grid border border-slate-200 rounded-3xl overflow-hidden bg-white/40 shadow-inner">
+<div class="absolute inset-0 scanline"></div>
+<div class="h-full w-full flex flex-col justify-around py-8 relative z-10">
+<!-- Forwards / Top Line -->
+<div class="flex justify-around px-12">
+<div class="w-24 h-32 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-red-50/50 hover:border-red-400 transition-all group">
+<div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-300 group-hover:text-red-400">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Batsman</span>
+</div>
+<div class="w-24 h-32 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-red-50/50 hover:border-red-400 transition-all group">
+<div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-300 group-hover:text-red-400">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Batsman</span>
+</div>
+<div class="w-24 h-32 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-red-50/50 hover:border-red-400 transition-all group">
+<div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-300 group-hover:text-red-400">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Batsman</span>
+</div>
+</div>
+<!-- Midfield / Middle Line -->
+<div class="flex justify-around px-8">
+<div class="w-24 h-32 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-red-50/50 hover:border-red-400 transition-all group">
+<div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-300 group-hover:text-red-400">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">All-Rounder</span>
+</div>
+<!-- Already Assigned Player Slot -->
+<div class="w-24 h-32 bg-white rounded-xl shadow-lg border border-primary flex flex-col items-center p-2 relative">
+<button class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-[10px]">×</button>
+<img class="w-16 h-16 rounded-full object-cover border-2 border-primary-container mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDobiaqPE3D_syNtmj69cB5xnhZJFWuPYEViQNYnf9WnHM61gHty86pWzDFJ1IGY3vS9Q8IQZu2m6y0zkvhPS2Ok97jwDr1lnO_igAyDWPYpC8rjBr_AYIalFzFVEl0_PUzC4dX6eFjLx6uHamgL2CY6zyOOCv_2heEuLsvIJearF3RhMwcLSOQXR_U1IQhKEDm2wVB77doi8OXwfyQLz2ksXeCxLXuCGF3DOkEjJnAx0h0nit95Fhkn2opmDx163YKYDS1vYksvBp"/>
+<span class="text-[9px] font-black uppercase text-center leading-tight">ROHIT SHARMA</span>
+<span class="text-[10px] font-label-red text-primary">₹16.0 Cr</span>
+</div>
+<div class="w-24 h-32 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-red-50/50 hover:border-red-400 transition-all group">
+<div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-300 group-hover:text-red-400">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">All-Rounder</span>
+</div>
+<div class="w-24 h-32 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-red-50/50 hover:border-red-400 transition-all group">
+<div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-300 group-hover:text-red-400">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">All-Rounder</span>
+</div>
+</div>
+<!-- Defense / Bottom Line -->
+<div class="flex justify-around px-12">
+<div class="w-24 h-32 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-red-50/50 hover:border-red-400 transition-all group">
+<div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-300 group-hover:text-red-400">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Bowler</span>
+</div>
+<div class="w-24 h-32 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-red-50/50 hover:border-red-400 transition-all group">
+<div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-300 group-hover:text-red-400">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Bowler</span>
+</div>
+<div class="w-24 h-32 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-red-50/50 hover:border-red-400 transition-all group">
+<div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-300 group-hover:text-red-400">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Bowler</span>
+</div>
+</div>
+<!-- Keeper -->
+<div class="flex justify-center">
+<div class="w-24 h-32 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-red-50/50 hover:border-red-400 transition-all group">
+<div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-300 group-hover:text-red-400">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Wicket Keeper</span>
+</div>
+</div>
+</div>
+<!-- Pitch Overlay Stats -->
+<div class="absolute bottom-6 left-6 flex items-center gap-4 z-20">
+<div class="glass-card px-4 py-2 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="text-xs font-bold uppercase">Synergy: 84%</span>
+</div>
+<div class="glass-card px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-primary">analytics</span>
+<span class="text-xs font-bold uppercase">Balance Index: 9.2</span>
+</div>
+</div>
+</section>
+<!-- Analytics & AI (Right Panel) -->
+<section class="col-span-3 h-full flex flex-col gap-6">
+<!-- Radar Chart Analysis -->
+<div class="glass-card p-6 rounded-3xl flex-1 flex flex-col">
+<h3 class="font-headline-md text-sm uppercase tracking-widest mb-6">Team Radar</h3>
+<div class="flex-1 relative flex items-center justify-center">
+<!-- SVG Radar Chart Simulation -->
+<svg class="w-full h-full max-w-[200px]" viewbox="0 0 200 200">
+<circle cx="100" cy="100" fill="none" r="80" stroke="#E2E8F0" stroke-dasharray="4 4" stroke-width="1"></circle>
+<circle cx="100" cy="100" fill="none" r="60" stroke="#E2E8F0" stroke-dasharray="4 4" stroke-width="1"></circle>
+<circle cx="100" cy="100" fill="none" r="40" stroke="#E2E8F0" stroke-dasharray="4 4" stroke-width="1"></circle>
+<line stroke="#E2E8F0" stroke-width="1" x1="100" x2="100" y1="20" y2="180"></line>
+<line stroke="#E2E8F0" stroke-width="1" x1="20" x2="180" y1="100" y2="100"></line>
+<polygon fill="rgba(220, 38, 38, 0.4)" points="100,40 160,100 130,160 70,160 40,100" stroke="#DC2626" stroke-width="2"></polygon>
+</svg>
+<!-- Radar Labels -->
+<span class="absolute top-0 text-[8px] font-bold text-slate-400 uppercase">Power</span>
+<span class="absolute right-0 text-[8px] font-bold text-slate-400 uppercase">Spin</span>
+<span class="absolute bottom-0 text-[8px] font-bold text-slate-400 uppercase">Death</span>
+<span class="absolute left-0 text-[8px] font-bold text-slate-400 uppercase">Strike Rate</span>
+</div>
+<div class="mt-4 grid grid-cols-2 gap-2">
+<div class="bg-slate-50 p-2 rounded-lg">
+<p class="text-[9px] text-slate-400 font-bold uppercase">Attack</p>
+<p class="text-sm font-bold text-primary">Elite</p>
+</div>
+<div class="bg-slate-50 p-2 rounded-lg">
+<p class="text-[9px] text-slate-400 font-bold uppercase">Defense</p>
+<p class="text-sm font-bold text-primary">Stable</p>
+</div>
+</div>
+</div>
+<!-- AI Coach Terminal -->
+<div class="glass-card p-6 rounded-3xl h-64 flex flex-col bg-slate-900 overflow-hidden relative">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-white to-red-500"></div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-red-500 text-sm">smart_toy</span>
+<h3 class="text-white text-xs font-bold uppercase tracking-widest">AI Coach Terminal</h3>
+<span class="ml-auto flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+<span class="text-[10px] text-red-500 font-mono">THINKING</span>
+</span>
+</div>
+<div class="flex-1 font-mono text-[11px] text-slate-400 space-y-2 overflow-y-auto">
+<p class="text-red-400">&gt; Analyzing budget efficiency...</p>
+<p>&gt; Squad synergy currently at 84%.</p>
+<p class="text-white">&gt; RECOMMENDATION: Consider adding a premium spinner for middle-over control.</p>
+<p>&gt; Current wage bill: ₹74.00 Cr / ₹100 Cr</p>
+<p class="animate-pulse">_</p>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-800">
+<div class="flex gap-2">
+<div class="flex-1 h-8 bg-slate-800 rounded border border-slate-700 flex items-center px-2 text-[10px] text-slate-500">Ask AI coach...</div>
+<button class="w-8 h-8 bg-primary-container rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xs">send</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Contextual FAB (Hidden on this transactional builder page as per rules, but shown here for UI completeness as requested) -->
+<button class="fixed bottom-8 right-8 bg-primary-container text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined text-3xl">bolt</span>
+</button>
+</body></html>

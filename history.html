@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Squad History | APEX REDLINE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#131b2e",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#410002",
+                    "surface-container": "#eceef0",
+                    "on-background": "#191c1e",
+                    "on-primary-container": "#fff6f5",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-surface": "#191c1e",
+                    "primary-fixed": "#ffdad6",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary": "#51596f",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#e6bdb8",
+                    "surface-tint": "#bf0715",
+                    "tertiary-container": "#6a7188",
+                    "surface-container-high": "#e6e8ea",
+                    "on-tertiary-container": "#f8f7ff",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-variant": "#e0e3e5",
+                    "primary-fixed-dim": "#ffb4ab",
+                    "on-secondary-fixed-variant": "#454747",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-dim": "#d8dadc",
+                    "surface-bright": "#f7f9fb",
+                    "secondary-container": "#dfe0e0",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "background": "#f7f9fb",
+                    "secondary": "#5d5f5f",
+                    "on-secondary-container": "#616363",
+                    "inverse-primary": "#ffb4ab",
+                    "on-error-container": "#93000a",
+                    "outline": "#916f6b",
+                    "primary": "#b70011",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "primary-container": "#dc2626",
+                    "inverse-surface": "#2d3133",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "tertiary-fixed": "#dae2fd",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "on-surface-variant": "#5c403c",
+                    "on-primary-fixed-variant": "#93000b",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "container-padding": "24px",
+                    "xl": "40px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "utility-sm": ["Lexend"],
+                    "label-red": ["Lexend"],
+                    "headline-md": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "utility-sm": ["12px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "label-red": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 8px 32px rgba(15, 23, 42, 0.05);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+        }
+        .pitch-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: rgba(220, 38, 38, 0.1);
+            padding: 4px;
+            border-radius: 4px;
+        }
+        .pitch-dot {
+            width: 6px;
+            height: 6px;
+            background: #DC2626;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- Top Navigation Shell -->
+<header class="bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-sm shadow-slate-200/50 dark:shadow-none docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center w-full px-6 py-3">
+<div class="flex items-center gap-md">
+<span class="text-xl font-black italic tracking-tighter text-red-600 dark:text-red-500 font-['Inter']">APEX REDLINE</span>
+<nav class="hidden md:flex ml-lg gap-md items-center">
+<a class="text-slate-500 dark:text-slate-400 hover:text-red-500 font-['Inter'] font-semibold tracking-tight py-1" href="#">Squad Builder</a>
+<a class="text-red-600 font-bold border-b-2 border-red-600 font-['Inter'] tracking-tight py-1" href="#">History</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-red-500 font-['Inter'] font-semibold tracking-tight py-1" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex items-center gap-xs px-md py-sm bg-surface-container rounded-full">
+<span class="font-utility-sm text-utility-sm text-primary">Budget: ₹100.0 Cr</span>
+</div>
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-50/50 transition-colors p-sm rounded-full">notifications</button>
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-50/50 transition-colors p-sm rounded-full">account_circle</button>
+</div>
+</div>
+</header>
+<div class="flex">
+<!-- Side Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col pt-16 h-screen w-64 border-r border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl hidden lg:flex">
+<div class="px-lg py-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-sm">
+<div class="w-sm h-8 bg-primary rounded-full"></div>
+<div>
+<p class="font-['Inter'] text-sm font-bold text-on-surface">Squad Manager</p>
+<p class="text-[10px] text-slate-500 font-medium">2024 Season</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-sm py-md space-y-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-red-600 dark:hover:text-red-400 transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">groups</span> Draft Pool
+                </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-red-600 dark:hover:text-red-400 transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">sports_cricket</span> Pitch View
+                </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-red-600 dark:hover:text-red-400 transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">analytics</span> Team Analytics
+                </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-red-600 dark:hover:text-red-400 transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">smart_toy</span> AI Coach
+                </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-red-600 dark:text-red-500 font-bold border-r-4 border-red-600 bg-red-50/50 dark:bg-red-900/10 font-['Inter'] text-sm" href="#">
+<span class="material-symbols-outlined">history</span> History
+                </a>
+</nav>
+<div class="p-lg">
+<button class="w-full bg-primary text-white py-md px-lg rounded-xl font-bold flex items-center justify-center gap-sm active:scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined">add</span> New Simulation
+                </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 lg:ml-64 p-container-padding max-w-7xl mx-auto">
+<header class="mb-xl flex justify-between items-end">
+<div>
+<h1 class="font-display-xl text-display-xl text-on-background mb-xs">THE VAULT</h1>
+<div class="flex items-center gap-sm text-secondary">
+<span class="material-symbols-outlined text-sm">cloud_done</span>
+<p class="font-utility-sm text-utility-sm uppercase tracking-widest">History fetched from Firebase Firestore</p>
+</div>
+</div>
+<div class="flex gap-md">
+<button class="glass-card px-md py-sm rounded-xl font-label-red text-label-red flex items-center gap-xs">
+<span class="material-symbols-outlined">filter_list</span> Filter
+                    </button>
+<button class="glass-card px-md py-sm rounded-xl font-label-red text-label-red flex items-center gap-xs">
+<span class="material-symbols-outlined">sort</span> Date
+                    </button>
+</div>
+</header>
+<!-- Squad History Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-lg">
+<!-- Squad Card 1 -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col group transition-all">
+<div class="relative h-40 bg-slate-100 flex items-center justify-center overflow-hidden">
+<img alt="Stadium Field" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:scale-105 transition-transform duration-500" data-alt="A cinematic, high-angle view of a professional sports stadium at dusk, with bright floodlights casting long shadows. The image is rendered in a minimalist style with a cool blue and silver color palette, accented by subtle red light trails. The atmosphere is professional, elite, and focused on strategic management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbQwixuK9Es7JUB3mCU6IKHOZwT7nsZ7Rq7wOF6eNsiljqwmTveSVLo1XefmesK7HQo1Cm_BaE1Zi7zd__VWtxetadhvdzSRWuoFBhStQC2n9t_0JJ3-un_GK7FuW83hTvgrPx2ayIVEJSTEzvqtfUOwrUAfyMOHSQ7bL5aeWZ8DVLeEn2XjePcsZKKxnmdH4GdSgkCzOKJFxux0fG9vYdTaEZGWkW9shgNqgt47b21LbAChbo3GaK3G-9c-Gcu6mXOg-ksgjowyUK"/>
+<div class="relative z-10 w-32 h-20 bg-white/80 backdrop-blur-md rounded-lg border border-slate-200 p-2 grid grid-cols-4 grid-rows-3 gap-2">
+<!-- 11 Dots Mock Pitch -->
+<div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div>
+<div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div>
+<div class="pitch-dot mx-auto col-start-2"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div>
+</div>
+<div class="absolute top-md right-md bg-primary text-white px-sm py-1 rounded text-[10px] font-bold">LATEST</div>
+</div>
+<div class="p-lg flex-1">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Finals Qualifier 1</h3>
+<p class="text-secondary font-utility-sm text-utility-sm">Saved: 24 Oct, 2024</p>
+</div>
+<div class="text-right">
+<p class="font-label-red text-label-red text-primary">88% Synergy</p>
+<p class="text-[10px] text-secondary font-bold">ELITE GRADE</p>
+</div>
+</div>
+<div class="space-y-sm mb-lg">
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[94%]" style="width: 94%;"></div>
+</div>
+<div class="flex justify-between font-utility-sm text-utility-sm">
+<span class="text-secondary">Cost: ₹94.5 Cr</span>
+<span class="text-primary">₹5.5 Cr Remaining</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-md border-t border-slate-100">
+<div class="flex gap-md">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors">share</button>
+<button class="material-symbols-outlined text-secondary hover:text-error transition-colors">delete</button>
+</div>
+<button class="bg-primary text-white px-lg py-sm rounded-lg font-bold text-sm flex items-center gap-sm active:scale-95 duration-150">
+<span class="material-symbols-outlined text-sm">open_in_new</span> LOAD SQUAD
+                            </button>
+</div>
+</div>
+</div>
+<!-- Squad Card 2 -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col group transition-all">
+<div class="relative h-40 bg-slate-100 flex items-center justify-center overflow-hidden">
+<img alt="Arena View" class="absolute inset-0 w-full h-full object-cover opacity-10 grayscale group-hover:scale-105 transition-transform duration-500" data-alt="A wide, sweeping landscape of a modern sports arena during a clear day. The architecture is sleek and metallic, gleaming under a bright, high-key sun. The image uses a premium aesthetic with subtle white-edition glassmorphism overlays and vibrant red accents in the stadium seating. The mood is high-stakes and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5Ipstch71gujaH6iihj2uO18vEd0ZFXzqT4ChQAUzQ6uGzRQZD_sowhcrDnjWg6vPuOFthqI7q6Va2q-pUd-7fOkvZcHOhHfUWMClmdi9mtdO-nJtM-PdJjLuX5fxIfa_27glzUCg1bWZ7Oh8UBtvjGy5kPq3E2P9Jx13EX06RAsUzbJF8W-Y4LksfuqkOLCW270MY961EvBAW8cj_26VvryVJq6TtW0L5jQgRHHnJ5Mt51dFcRHgoUdeqWayYP2YN9-BFnAXU-HC"/>
+<div class="relative z-10 w-32 h-20 bg-white/80 backdrop-blur-md rounded-lg border border-slate-200 p-2 grid grid-cols-4 grid-rows-3 gap-2">
+<div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div>
+<div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div>
+<div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div>
+</div>
+</div>
+<div class="p-lg flex-1">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Budget Simulation B</h3>
+<p class="text-secondary font-utility-sm text-utility-sm">Saved: 18 Oct, 2024</p>
+</div>
+<div class="text-right">
+<p class="font-label-red text-label-red text-primary">74% Synergy</p>
+<p class="text-[10px] text-secondary font-bold">BALANCED</p>
+</div>
+</div>
+<div class="space-y-sm mb-lg">
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[78%]" style="width: 78%;"></div>
+</div>
+<div class="flex justify-between font-utility-sm text-utility-sm">
+<span class="text-secondary">Cost: ₹78.2 Cr</span>
+<span class="text-primary">₹21.8 Cr Remaining</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-md border-t border-slate-100">
+<div class="flex gap-md">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors">share</button>
+<button class="material-symbols-outlined text-secondary hover:text-error transition-colors">delete</button>
+</div>
+<button class="bg-primary text-white px-lg py-sm rounded-lg font-bold text-sm flex items-center gap-sm active:scale-95 duration-150">
+<span class="material-symbols-outlined text-sm">open_in_new</span> LOAD SQUAD
+                            </button>
+</div>
+</div>
+</div>
+<!-- Squad Card 3 -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col group transition-all">
+<div class="relative h-40 bg-slate-100 flex items-center justify-center overflow-hidden">
+<img alt="Pitch Grass" class="absolute inset-0 w-full h-full object-cover opacity-10 grayscale group-hover:scale-105 transition-transform duration-500" data-alt="A close-up shot of a meticulously groomed green cricket field under intense professional lighting. The blades of grass are sharp and vivid, with white boundary lines creating a graphic pattern. The scene is illuminated by dramatic stadium spots, casting a vibrant, energetic glow with a focus on sports precision and elite performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIPvWGvx6nWpFx4d-M3Wxn5zp03LzA89RV-MfbHGf9pDhMDsCaUXI1VX2X79Ax6zyMNTbDbJBMMnRKngA2Z9hpP_btijEME5pKylxah03naCsKdelSX0dkSNQSIxY2rZm68fKdNqz9wtTIkw8XRj8ilnE3CadX3HWxNXzCRYGK2Z5wlL5nW0hhEC25vknuB1ssycCi_RoYKsVTcLiPd5BZrh8aBKZi8ARKjKKsmwZD2soDCGPlOHNog4CTVr00seDOq9loehmAFeR5"/>
+<div class="relative z-10 w-32 h-20 bg-white/80 backdrop-blur-md rounded-lg border border-slate-200 p-2 grid grid-cols-4 grid-rows-3 gap-2">
+<div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div>
+<div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div>
+<div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div><div class="pitch-dot mx-auto"></div>
+</div>
+</div>
+<div class="p-lg flex-1">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Experimental Bowlers</h3>
+<p class="text-secondary font-utility-sm text-utility-sm">Saved: 12 Oct, 2024</p>
+</div>
+<div class="text-right">
+<p class="font-label-red text-label-red text-primary">62% Synergy</p>
+<p class="text-[10px] text-secondary font-bold">MID-RANGE</p>
+</div>
+</div>
+<div class="space-y-sm mb-lg">
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[99%]" style="width: 99%;"></div>
+</div>
+<div class="flex justify-between font-utility-sm text-utility-sm">
+<span class="text-secondary">Cost: ₹99.8 Cr</span>
+<span class="text-primary">₹0.2 Cr Remaining</span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-md border-t border-slate-100">
+<div class="flex gap-md">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors">share</button>
+<button class="material-symbols-outlined text-secondary hover:text-error transition-colors">delete</button>
+</div>
+<button class="bg-primary text-white px-lg py-sm rounded-lg font-bold text-sm flex items-center gap-sm active:scale-95 duration-150">
+<span class="material-symbols-outlined text-sm">open_in_new</span> LOAD SQUAD
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State Section (Hidden by default, shown when no data) -->
+<section class="hidden flex flex-col items-center justify-center py-xl bg-white/30 backdrop-blur-sm border-2 border-dashed border-slate-200 rounded-3xl text-center mt-xl">
+<div class="w-64 h-64 mb-lg relative">
+<img alt="Empty Stadium Illustration" class="w-full h-full object-contain grayscale opacity-20" data-alt="A minimalist, stylized digital illustration of an empty, majestic sports stadium with perfectly aligned rows of seats and a pristine green field. The lighting is ethereal and soft, creating a calm and expectant mood. The color palette is dominated by muted silvers, whites, and a single, sharp red streak representing the brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK4Ru1A3oehC6qOmp9GbD24AFfYY-y7ptQiOZBjNcGkD8a8bIkPPKQKB0hRD3yh0LJ66Oq8JNV2vD3vWich4I9O2lzlLGxsK2nVwD31kWGzvegC7yHgQlXiStkCvXaCtRE__mTttkknA_61Gn3C7mSeiAGT7GNQAJhAjbTXrpc6aD_hfmxXRMgVtoNQn9QkHqg_3EiUkmw-IPxYsENg0FVWNG6E5OGi8gxSz1aO_1GGR2maKTJrWVQkyNYIweHc8RLhkcYpsCh4dIm"/>
+<span class="material-symbols-outlined absolute inset-0 flex items-center justify-center text-8xl text-slate-300 font-extralight">sports_score</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">The Vault is Empty</h2>
+<p class="text-secondary max-w-md mx-auto mb-lg font-body-md text-body-md">You haven't saved any squad simulations yet. Start building your winning 11 and save them to your Firebase profile to see them here.</p>
+<button class="bg-primary text-white px-xl py-md rounded-xl font-bold flex items-center gap-md hover:shadow-lg transition-shadow">
+<span class="material-symbols-outlined">add_circle</span> CREATE FIRST SQUAD
+                </button>
+</section>
+<!-- Bottom Stats Bar (Bento Detail) -->
+<div class="mt-xl grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="glass-card p-lg rounded-xl">
+<p class="text-secondary font-utility-sm text-utility-sm mb-xs uppercase tracking-tight">Total Simulations</p>
+<p class="font-display-xl text-3xl text-on-surface">14</p>
+</div>
+<div class="glass-card p-lg rounded-xl">
+<p class="text-secondary font-utility-sm text-utility-sm mb-xs uppercase tracking-tight">Avg Synergy</p>
+<p class="font-display-xl text-3xl text-primary">82%</p>
+</div>
+<div class="glass-card p-lg rounded-xl">
+<p class="text-secondary font-utility-sm text-utility-sm mb-xs uppercase tracking-tight">Most Picked Captain</p>
+<p class="font-headline-md text-headline-md text-on-surface">Virat Kohli</p>
+</div>
+<div class="glass-card p-lg rounded-xl bg-primary-container/10 border-primary/20">
+<p class="text-primary font-utility-sm text-utility-sm mb-xs uppercase tracking-tight">Vault Status</p>
+<p class="font-headline-md text-headline-md text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span> 
+                        Sync Active
+                    </p>
+</div>
+</div>
+</main>
+</div>
+<!-- Bottom Mobile Nav Shell -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-white/70 backdrop-blur-xl border-t border-slate-200 flex justify-around items-center py-3 z-50">
+<button class="flex flex-col items-center gap-xs text-slate-400">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-[10px] font-bold">Pool</span>
+</button>
+<button class="flex flex-col items-center gap-xs text-slate-400">
+<span class="material-symbols-outlined">sports_cricket</span>
+<span class="text-[10px] font-bold">Pitch</span>
+</button>
+<button class="flex flex-col items-center gap-xs text-red-600">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="text-[10px] font-bold">Vault</span>
+</button>
+<button class="flex flex-col items-center gap-xs text-slate-400">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-[10px] font-bold">AI</span>
+</button>
+</nav>
+</body></html>

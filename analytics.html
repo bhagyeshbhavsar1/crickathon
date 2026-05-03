@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#131b2e",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#410002",
+                        "surface-container": "#eceef0",
+                        "on-background": "#191c1e",
+                        "on-primary-container": "#fff6f5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-surface": "#191c1e",
+                        "primary-fixed": "#ffdad6",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary": "#51596f",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#e6bdb8",
+                        "surface-tint": "#bf0715",
+                        "tertiary-container": "#6a7188",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-container": "#f8f7ff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-variant": "#e0e3e5",
+                        "primary-fixed-dim": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-dim": "#d8dadc",
+                        "surface-bright": "#f7f9fb",
+                        "secondary-container": "#dfe0e0",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "secondary": "#5d5f5f",
+                        "on-secondary-container": "#616363",
+                        "inverse-primary": "#ffb4ab",
+                        "on-error-container": "#93000a",
+                        "outline": "#916f6b",
+                        "primary": "#b70011",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "primary-container": "#dc2626",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed": "#dae2fd",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "on-surface-variant": "#5c403c",
+                        "on-primary-fixed-variant": "#93000b",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "container-padding": "24px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "utility-sm": ["Lexend"],
+                        "label-red": ["Lexend"],
+                        "headline-md": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "utility-sm": ["12px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "label-red": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 8px 32px rgba(15, 23, 42, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 12px 48px rgba(220, 38, 38, 0.08);
+        }
+        .red-shadow-glow {
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-[#F7F9FB] font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-white/70 backdrop-blur-xl border-b border-slate-200 docked full-width top-0 z-50 sticky flex justify-between items-center w-full px-6 py-3">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black italic tracking-tighter text-red-600">APEX REDLINE</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Inter'] font-semibold tracking-tight text-slate-500 hover:text-red-500 transition-colors" href="#">Draft Pool</a>
+<a class="font-['Inter'] font-semibold tracking-tight text-slate-500 hover:text-red-500 transition-colors" href="#">Pitch View</a>
+<a class="font-['Inter'] font-semibold tracking-tight text-red-600 font-bold border-b-2 border-red-600" href="#">Team Analytics</a>
+<a class="font-['Inter'] font-semibold tracking-tight text-slate-500 hover:text-red-500 transition-colors" href="#">AI Coach</a>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-red text-red-600 bg-red-50 px-3 py-1 rounded-full">Budget: ₹100.0 Cr</span>
+<span class="material-symbols-outlined text-slate-600 cursor-pointer p-2 hover:bg-slate-50/50 rounded-full transition-colors">notifications</span>
+<span class="material-symbols-outlined text-slate-600 cursor-pointer p-2 hover:bg-slate-50/50 rounded-full transition-colors">account_circle</span>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-white/70 backdrop-blur-xl border-r border-slate-200 hidden md:flex flex-col pt-20">
+<div class="px-6 mb-8">
+<h2 class="font-headline-md text-red-600 leading-none">Squad Manager</h2>
+<p class="text-xs text-slate-500 mt-1 uppercase tracking-widest font-bold">2024 Season</p>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<div class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 transition-all rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-['Inter'] text-sm font-medium">Draft Pool</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 transition-all rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">sports_cricket</span>
+<span class="font-['Inter'] text-sm font-medium">Pitch View</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-red-600 font-bold border-r-4 border-red-600 bg-red-50/50 transition-all rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Inter'] text-sm font-medium">Team Analytics</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 transition-all rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-['Inter'] text-sm font-medium">AI Coach</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-50 transition-all rounded-lg cursor-pointer">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Inter'] text-sm font-medium">History</span>
+</div>
+</nav>
+<div class="p-4 mt-auto">
+<button class="w-full bg-primary-container text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-lg shadow-red-200">
+<span class="material-symbols-outlined">add</span>
+                    New Simulation
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-64 flex-1 p-container-padding pt-10">
+<div class="max-w-7xl mx-auto space-y-xl">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-utility-sm text-red-600 tracking-widest uppercase">Performance Engine</span>
+<h1 class="font-display-xl text-on-background">Squad Intel <span class="text-red-600">Analytics</span></h1>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2 glass-card rounded-full font-label-red flex items-center gap-2 hover:border-red-200">
+<span class="material-symbols-outlined text-red-600">download</span> Export PDF
+                        </button>
+<button class="px-6 py-2 bg-red-600 text-white rounded-full font-label-red flex items-center gap-2 shadow-lg shadow-red-100">
+<span class="material-symbols-outlined">refresh</span> Recalculate
+                        </button>
+</div>
+</div>
+<!-- Bento Grid Section 1: Charts -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Bowling Mix - Donut Chart -->
+<div class="md:col-span-4 glass-card rounded-xl p-md flex flex-col items-center">
+<div class="w-full flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-sm text-slate-800 uppercase tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-red-600" data-weight="fill">shield</span> Bowling Mix
+                            </h3>
+<span class="text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded">High Pace</span>
+</div>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-100" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="16"></circle>
+<circle class="text-red-600" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502" stroke-dashoffset="150" stroke-width="16"></circle>
+<circle class="text-slate-800" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502" stroke-dashoffset="400" stroke-width="16"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-display-xl text-2xl text-on-background">70%</span>
+<span class="text-[10px] uppercase font-bold text-slate-500">Fast Tech</span>
+</div>
+</div>
+<div class="w-full mt-6 grid grid-cols-2 gap-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-red-600"></div>
+<span class="text-xs font-medium">Pace (70%)</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-slate-800"></div>
+<span class="text-xs font-medium">Spin (30%)</span>
+</div>
+</div>
+</div>
+<!-- Batting Power - Bar Chart -->
+<div class="md:col-span-8 glass-card rounded-xl p-md">
+<div class="w-full flex justify-between items-center mb-8">
+<h3 class="font-headline-md text-sm text-slate-800 uppercase tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-red-600" data-weight="fill">fireplace</span> Batting Power: Top 6
+                            </h3>
+<div class="flex gap-4">
+<div class="flex items-center gap-1.5"><div class="w-2 h-2 bg-red-600 rounded"></div><span class="text-[10px] font-bold text-slate-500">STRIKE RATE</span></div>
+<div class="flex items-center gap-1.5"><div class="w-2 h-2 bg-slate-200 rounded"></div><span class="text-[10px] font-bold text-slate-500">STABILITY</span></div>
+</div>
+</div>
+<div class="space-y-6">
+<!-- Player Bar -->
+<div class="grid grid-cols-12 items-center gap-4">
+<span class="col-span-2 text-xs font-bold text-slate-700">R. Sharma</span>
+<div class="col-span-10 flex flex-col gap-1">
+<div class="h-3 bg-red-600 rounded-r-full" style="width: 85%"></div>
+<div class="h-1 bg-slate-200 rounded-r-full" style="width: 65%"></div>
+</div>
+</div>
+<div class="grid grid-cols-12 items-center gap-4">
+<span class="col-span-2 text-xs font-bold text-slate-700">I. Kishan</span>
+<div class="col-span-10 flex flex-col gap-1">
+<div class="h-3 bg-red-600 rounded-r-full" style="width: 92%"></div>
+<div class="h-1 bg-slate-200 rounded-r-full" style="width: 40%"></div>
+</div>
+</div>
+<div class="grid grid-cols-12 items-center gap-4">
+<span class="col-span-2 text-xs font-bold text-slate-700">S. Yadav</span>
+<div class="col-span-10 flex flex-col gap-1">
+<div class="h-3 bg-red-600 rounded-r-full" style="width: 98%"></div>
+<div class="h-1 bg-slate-200 rounded-r-full" style="width: 75%"></div>
+</div>
+</div>
+<div class="grid grid-cols-12 items-center gap-4">
+<span class="col-span-2 text-xs font-bold text-slate-700">T. David</span>
+<div class="col-span-10 flex flex-col gap-1">
+<div class="h-3 bg-red-600 rounded-r-full" style="width: 80%"></div>
+<div class="h-1 bg-slate-200 rounded-r-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Phase Strength - Line Graph -->
+<div class="glass-card rounded-xl p-lg">
+<div class="flex justify-between items-center mb-10">
+<div>
+<h3 class="font-headline-md text-sm text-slate-800 uppercase tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-red-600" data-weight="fill">target</span> Phase Strength Projection
+                            </h3>
+<p class="text-xs text-slate-500 mt-1">Projected match impact across 20 overs</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="w-8 h-1 bg-red-600 rounded-full"></span>
+<span class="text-xs font-bold text-slate-600">Current Squad</span>
+</div>
+<div class="flex items-center gap-2 opacity-30">
+<span class="w-8 h-1 bg-slate-400 rounded-full border-dashed border-b"></span>
+<span class="text-xs font-bold text-slate-600">League Avg</span>
+</div>
+</div>
+</div>
+<div class="h-64 relative w-full px-4">
+<!-- Simplified SVG Graph -->
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 1000 200">
+<!-- Background Grid -->
+<line stroke="#f1f5f9" stroke-width="1" x1="0" x2="1000" y1="0" y2="0"></line>
+<line stroke="#f1f5f9" stroke-width="1" x1="0" x2="1000" y1="100" y2="100"></line>
+<line stroke="#f1f5f9" stroke-width="1" x1="0" x2="1000" y1="200" y2="200"></line>
+<!-- The Line -->
+<path d="M0,150 C150,140 250,50 333,60 C416,70 583,160 666,150 C750,140 900,40 1000,20" fill="none" stroke="#DC2626" stroke-linecap="round" stroke-width="4"></path>
+<!-- Data Points -->
+<circle cx="333" cy="60" fill="#DC2626" r="6"></circle>
+<circle cx="666" cy="150" fill="#DC2626" r="6"></circle>
+<circle cx="1000" cy="20" fill="#DC2626" r="6"></circle>
+</svg>
+<div class="absolute bottom-0 w-full flex justify-between transform translate-y-8 px-4">
+<div class="text-center">
+<span class="block text-xs font-black text-red-600">8.2</span>
+<span class="text-[10px] uppercase text-slate-400 font-bold">Powerplay</span>
+</div>
+<div class="text-center">
+<span class="block text-xs font-black text-slate-800">7.1</span>
+<span class="text-[10px] uppercase text-slate-400 font-bold">Middle Overs</span>
+</div>
+<div class="text-center">
+<span class="block text-xs font-black text-red-600">11.4</span>
+<span class="text-[10px] uppercase text-slate-400 font-bold">Death Overs</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Key Player Stats Table -->
+<div class="glass-card rounded-xl overflow-hidden">
+<div class="p-6 border-b border-slate-100 flex justify-between items-center">
+<h3 class="font-headline-md text-sm text-slate-800 uppercase tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-red-600">trending_up</span> Premium Asset Audit
+                        </h3>
+<span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded font-bold uppercase">Top 3 by Market Value</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50/50">
+<th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase">Player Profile</th>
+<th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase">Auction Price</th>
+<th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase">2023 Perf</th>
+<th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase">2022 Perf</th>
+<th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase">2021 Perf</th>
+<th class="px-6 py-4 text-[10px] font-bold text-slate-400 uppercase">ROI Trend</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border border-red-100">
+<img class="w-full h-full object-cover" data-alt="Close up professional studio portrait of a high-performance athlete in a red and white team jersey looking determined against a minimalist gray backdrop with cinematic rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcwL1w4ICSsRHaJjlptxz2vn9PQLeLQkI3rW9bwYCux6VvBs7ygktQEzzRfIP4ozvSKIw69xEbAr_0sZyhIKEubZqpfbaSE8NJTAE2e1tPiw58Q8I0x44r5-EVJvhDYE9sWmrsPThsVZ3mtYlfYw9u5BoOqdsjaCsbmecYrhzDhIalNePZHsMcmPHvkYAqyz8yIBwGDLiL2QIZLu--dzfEpw_sh7WiqGf5RXKx8E4bQ-SkxwFxRUMtmDbjYSKuPy7M_wEsH09PzEa-"/>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-800">Jasprit Bumrah</div>
+<div class="text-[10px] text-red-600 font-bold uppercase">Bowler (Lvl 5)</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-label-red text-red-600">₹15.25 Cr</td>
+<td class="px-6 py-4 text-sm font-medium">27 Wkts / 6.4 Econ</td>
+<td class="px-6 py-4 text-sm font-medium text-slate-400">Injured</td>
+<td class="px-6 py-4 text-sm font-medium">21 Wkts / 7.1 Econ</td>
+<td class="px-6 py-4">
+<span class="text-green-600 font-bold text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +12%
+                                        </span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border border-red-100">
+<img class="w-full h-full object-cover" data-alt="A focused professional cricket player holding a bat during a training session in a high-tech indoor facility. The lighting is clean and high-key, emphasizing a modern sports management aesthetic with subtle red color grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeX0121Ecq7HoYCjgpJ-S5ylESClKdekjWvGgmK58JdaT9fUe7u6_TcAqRgZR-YaZL16kwiLWyVWu_8-fVjpKSyYfXNnm-FKUI1vBTT5DujfUhPnvv0J1cSUrJfg6HNXytSAlpOSKggMoDDWaLyn88nuQOXamydISnpYD1EpU5-0tkuedX1chS4oBpmCVkK93liYQsqoA5lS7wO46X6CBvj8SSknsmoIn2e6qA7XA5UOyeGUdaVESCHChAW_1JR2dGE1CqmvSv1GMT"/>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-800">Suryakumar Yadav</div>
+<div class="text-[10px] text-red-600 font-bold uppercase">Batter (Lvl 5)</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-label-red text-red-600">₹14.00 Cr</td>
+<td class="px-6 py-4 text-sm font-medium">605 Runs / 181.1 SR</td>
+<td class="px-6 py-4 text-sm font-medium">483 Runs / 145.6 SR</td>
+<td class="px-6 py-4 text-sm font-medium">317 Runs / 143.4 SR</td>
+<td class="px-6 py-4">
+<span class="text-green-600 font-bold text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +24%
+                                        </span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border border-red-100">
+<img class="w-full h-full object-cover" data-alt="Abstract dynamic action shot of a professional sports player in motion, blurred against a bright white background with strong red lighting accents. The overall atmosphere is energetic, professional, and captures the intensity of elite competition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv1f6TCEIUiqfFLd-lvvK_qMUuXTctIloF9SRWF7OlKLAffN7UcCmZDr_HhrR3UOau00KCTkdkJ6SE2kmmrqEyWHK6pClMtHDXs_j6VL0dHehqa6J5Cap-9K8yV-cuMYxAl-JlkpS2l8IsrlajtoxqO9IGKv5l77Ldr1Uq5kfhJqr2ZqtNtRmu7qVrr4D3qtPhuJmxgw9pEM0UQNG-Fp9dbH-jF2yjz_cn6XNwSRsTw7rgNfX7Z5cEdaS2vFyx_Y30wmEnDxkVuq_S"/>
+</div>
+<div>
+<div class="text-sm font-bold text-slate-800">Hardik Pandya</div>
+<div class="text-[10px] text-red-600 font-bold uppercase">All-Rounder (Lvl 5)</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-label-red text-red-600">₹12.00 Cr</td>
+<td class="px-6 py-4 text-sm font-medium">346 Runs / 136 SR</td>
+<td class="px-6 py-4 text-sm font-medium">487 Runs / 131 SR</td>
+<td class="px-6 py-4 text-sm font-medium">127 Runs / 113 SR</td>
+<td class="px-6 py-4">
+<span class="text-slate-400 font-bold text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_flat</span> 0%
+                                        </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Simulation Footer -->
+<div class="flex flex-col md:flex-row gap-6">
+<div class="flex-1 glass-card rounded-xl p-md flex items-center gap-4">
+<div class="p-3 bg-red-600 rounded-lg text-white">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">AI Coach Observation</p>
+<p class="text-sm font-medium text-slate-700 leading-tight">Your death bowling is elite (top 5%), but spin variations are predictable in middle overs. Recommend scouting a wrist spinner.</p>
+</div>
+</div>
+<div class="flex-1 glass-card rounded-xl p-md flex items-center gap-4 border-l-4 border-red-600">
+<div class="p-3 bg-slate-800 rounded-lg text-white">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-slate-400">Remaining Purse</p>
+<p class="text-sm font-black text-slate-900 leading-none">₹12.75 Cr <span class="text-[10px] font-bold text-red-600 ml-2">- ₹2.5 Cr planned</span></p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

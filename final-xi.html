@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface-variant": "#5c403c",
+                        "on-tertiary-container": "#f8f7ff",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-fixed": "#dae2fd",
+                        "tertiary": "#51596f",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "primary-fixed-dim": "#ffb4ab",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-fixed": "#131b2e",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffdad6",
+                        "on-background": "#191c1e",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-variant": "#e0e3e5",
+                        "surface-tint": "#bf0715",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#916f6b",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#93000b",
+                        "surface-bright": "#f7f9fb",
+                        "outline-variant": "#e6bdb8",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "tertiary-container": "#6a7188",
+                        "background": "#f7f9fb",
+                        "on-secondary-fixed-variant": "#454747",
+                        "secondary-container": "#dfe0e0",
+                        "primary-container": "#dc2626",
+                        "primary": "#b70011",
+                        "on-surface": "#191c1e",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "on-primary-container": "#fff6f5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-secondary-container": "#616363",
+                        "inverse-primary": "#ffb4ab",
+                        "surface-container": "#eceef0",
+                        "secondary": "#5d5f5f",
+                        "on-primary-fixed": "#410002",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "gutter": "16px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-red": ["Lexend"],
+                        "body-md": ["Inter"],
+                        "utility-sm": ["Lexend"],
+                        "display-xl": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-red": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "utility-sm": ["12px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .mesh-gradient {
+            background-color: #f7f9fb;
+            background-image: radial-gradient(at 0% 0%, rgba(220, 38, 38, 0.1) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(220, 38, 38, 0.05) 0px, transparent 50%);
+        }
+        .pitch-grid {
+            display: grid;
+            grid-template-areas: 
+                ". wk ."
+                "bat1 bat2 bat3"
+                "ar1 ar2 ar3"
+                "bwl1 bwl2 bwl3 bwl4";
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 h-20 w-full fixed top-0 z-50 bg-white/70 backdrop-blur-[20px] border-b border-slate-200 shadow-[0_8px_32px_rgba(15,23,42,0.05)]">
+<div class="flex items-center gap-8">
+<h1 class="text-2xl font-black text-red-600 uppercase italic tracking-tighter">IPL SQUAD BUILDER</h1>
+<div class="hidden md:flex items-center bg-slate-100 rounded-full px-4 py-2 gap-3 border border-slate-200">
+<span class="material-symbols-outlined text-slate-500">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64" placeholder="Search player stats..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 hover:bg-slate-50 transition-all scale-95 active:scale-90 shadow-sm">
+<span class="material-symbols-outlined text-red-600">link</span>
+<span class="font-utility-sm text-slate-700">Generate Unique Share Link</span>
+</button>
+<button class="bg-red-600 text-white rounded-full px-6 py-2 font-utility-sm hover:bg-red-700 transition-all scale-95 active:scale-90 shadow-lg shadow-red-200">
+                    Edit Squad
+                </button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200"></div>
+<div class="flex items-center gap-4">
+<span class="font-label-red text-red-600">Budget: ₹100.00 Cr</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-red-600 cursor-pointer transition-colors">notifications</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-red-600 cursor-pointer transition-colors">settings</span>
+<img alt="GM Profile Avatar" class="w-10 h-10 rounded-full border-2 border-red-600 object-cover" data-alt="A professional headshot of a high-level sports manager in a crisp white shirt, set against a blurred modern stadium backdrop. The lighting is clean and cinematic, reflecting a professional broadcast environment. The image uses a high-key, sophisticated aesthetic with soft shadows and sharp focus on the subject's face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1SpUcIKwJiyauxeCB_OiC9iR7Rm2PtEEp0G94HJE3Tzs2WlAkYjJfejK48vJZMoGIB4Pc5xJttrDW107CAVRpk1PWc9BRfAHS50NiDsn7jqRvmC9oNY8cAy49FhNlU7AXxxySRvxAwVphH1WQ4K_g1ClZh4aq70j_-NZSPb-LMcWnoow1UxmgEDuZ-vKtG576b_YGDyupe1o_jEMu4ZCEpwx2J4h4bJCjT2WlW8fMyLF35G8fPanWd7UJmnmMpKTGqAgPol_XiEEL"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-20 h-[calc(100vh-80px)] flex flex-col pt-8 pb-4 z-40 bg-white/70 backdrop-blur-[20px] w-64 border-r border-slate-200 shadow-xl">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 bg-red-600 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm">sports_cricket</span>
+</div>
+<div>
+<p class="font-headline-md text-xs text-on-surface uppercase tracking-widest">Pro Management</p>
+<p class="text-[10px] text-red-600 font-bold uppercase tracking-tighter">Elite Status</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 pr-4">
+<a class="text-slate-500 py-3 px-6 hover:text-red-600 font-['Inter'] text-sm uppercase tracking-widest flex items-center gap-3 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span> Draft Pool
+            </a>
+<a class="bg-red-600 text-white rounded-r-full py-3 px-6 shadow-lg shadow-red-200 font-['Inter'] text-sm uppercase tracking-widest flex items-center gap-3 translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">sports_cricket</span> Pitch View
+            </a>
+<a class="text-slate-500 py-3 px-6 hover:text-red-600 font-['Inter'] text-sm uppercase tracking-widest flex items-center gap-3 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined">leaderboard</span> Team Analytics
+            </a>
+<a class="text-slate-500 py-3 px-6 hover:text-red-600 font-['Inter'] text-sm uppercase tracking-widest flex items-center gap-3 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined">smart_toy</span> AI Coach
+            </a>
+<a class="text-slate-500 py-3 px-6 hover:text-red-600 font-['Inter'] text-sm uppercase tracking-widest flex items-center gap-3 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined">history</span> History
+            </a>
+</div>
+<div class="mt-auto px-6">
+<button class="w-full bg-slate-900 text-white py-3 rounded font-utility-sm uppercase tracking-widest hover:bg-red-600 transition-colors">
+                Finalize Squad
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="ml-64 mt-20 p-container-padding mesh-gradient min-h-[calc(100vh-80px)]">
+<div class="max-w-7xl mx-auto space-y-xl">
+<!-- Pitch Grid Section -->
+<section class="relative">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-display-xl text-on-surface">Final XI Strategy</h2>
+<p class="font-body-lg text-secondary">Tactical deployment for the upcoming championship series.</p>
+</div>
+<div class="flex gap-4">
+<div class="glass-card px-4 py-2 rounded-xl border border-slate-200">
+<span class="text-xs text-slate-500 uppercase font-bold block">Aggression Index</span>
+<span class="text-xl font-headline-md text-red-600">88%</span>
+</div>
+<div class="glass-card px-4 py-2 rounded-xl border border-slate-200">
+<span class="text-xs text-slate-500 uppercase font-bold block">Defensive Stability</span>
+<span class="text-xl font-headline-md text-red-600">74%</span>
+</div>
+</div>
+</div>
+<!-- 11-Player Grid -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Left: Formation Grid -->
+<div class="col-span-8 glass-card border border-slate-200 rounded-xl p-lg relative overflow-hidden h-[600px] flex flex-col justify-between">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="w-full h-full border-[2px] border-red-600 rounded-full scale-110 -translate-y-1/2"></div>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-24 border-t-2 border-x-2 border-red-600"></div>
+</div>
+<!-- WK -->
+<div class="flex justify-center">
+<div class="w-24 text-center group cursor-pointer">
+<div class="w-16 h-16 mx-auto rounded-full bg-white border-2 border-red-600 p-1 mb-2 group-hover:scale-110 transition-transform">
+<img class="w-full h-full rounded-full object-cover" data-alt="A portrait of a focused professional cricket player in white gear, looking intensely toward the camera. The background is a vibrant, sunlit cricket stadium with blurred spectators. The lighting highlights the subject's face with a professional, broadcast-quality glow, emphasizing an elite athlete aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5mBECKu3VJpNJP2moDsJ9SdTJ-1dr1lTkc3ZItI9MivUFS48hlKTKggs0M-m19u6tEQ87m8qOBFMxIUC0hzd4vSc8n0rwoqFiOAdus0XHCpE9IbEpFM_FNSor1HWNNm1lE7Kj_Zbsse2_86NeIQD7MhOkkE8rNmHb7SugC9z0c8-_JyUc3hum9OivF5qx-xIS1-_WP8FsLi0E41D8N4kpjie5ayWuBSXHLsGyqB_FCUnI_OPmzR_MPDRyNO7QpEZEPptBycI-NF9P"/>
+</div>
+<span class="bg-red-600 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">WK</span>
+<p class="font-utility-sm text-xs mt-1 truncate">Rishabh Pant</p>
+</div>
+</div>
+<!-- Batsmen Row -->
+<div class="flex justify-around">
+<div class="w-24 text-center group cursor-pointer">
+<div class="w-16 h-16 mx-auto rounded-full bg-white border-2 border-red-600 p-1 mb-2 group-hover:scale-110 transition-transform">
+<img class="w-full h-full rounded-full object-cover" data-alt="Close-up portrait of a professional cricket batsman holding his bat, with a high-key studio lighting that makes the red accents of his uniform pop. The mood is determined and elite, with a clean white-edition glassmorphic background effect." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlSRz1Z9XzCdUcaB0bVj2dk0hfg2LEKOtzG_TyhPaFd_uuDDBh6x780cNAzwKy3v6A7Cyyqz1jfvZVtW76yQV9-jKYqIi9SnIY0ZcGYFxiKi-4Tb9LeICSZjj-I60owPYY9QVaDAca0TSD9eFT2HPD2M6gFjLJxALad47uqvDjyD4iJAUfhXoTSWdeEpopTs1iamTWF2hkmIyEFTytgsCrOptUrqAEBguPHE3odf5mdvTgcLZmmn4NVdlqrwYQnTEeNQPHTOTw8nS1"/>
+</div>
+<span class="bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">BAT</span>
+<p class="font-utility-sm text-xs mt-1 truncate">Virat Kohli</p>
+</div>
+<div class="w-24 text-center group cursor-pointer scale-110">
+<div class="w-20 h-20 mx-auto rounded-full bg-white border-4 border-red-600 p-1 mb-2 group-hover:scale-110 transition-transform">
+<img class="w-full h-full rounded-full object-cover" data-alt="A commanding portrait of a legendary cricket captain, wearing a red team jersey. The lighting is dramatic and focused, highlighting facial features and intensity. The background features a subtle, semi-transparent bokeh of stadium lights, creating a sense of professional sports prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCBjiTOOAE93lrcZisCUMsm-udEv_I0PHX7N1AeG1TsNSuRNoqi94Q0xnEoCPTbRPsRbsWrVD16ytcU9smq2KH3ahOqeBnCOUwVeuomZ5CQ36S1qi_Syu9xgM9Rbx3fWFFQRysMwCxz3jzmhi9i7dczkofA4UK8fawA_3IJ5G2EPnj3Q1rg1_fuwWqK30RFcSzy5xlJYmdLQClGIjayPZ_XKQM211rfIDx70WmgwEeWLvtOm7lsin2xD4eFZw0OMu41uQYH-sGzru2"/>
+</div>
+<span class="bg-red-600 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">CPT / BAT</span>
+<p class="font-utility-sm text-xs mt-1 truncate">Rohit Sharma</p>
+</div>
+<div class="w-24 text-center group cursor-pointer">
+<div class="w-16 h-16 mx-auto rounded-full bg-white border-2 border-red-600 p-1 mb-2 group-hover:scale-110 transition-transform">
+<img class="w-full h-full rounded-full object-cover" data-alt="An athletic cricket player posing with a focused expression, wearing professional sports attire. The image is captured with a high-end lens, producing a beautiful depth of field that isolates the player against a modern training facility backdrop. The color palette is clean, favoring whites and reds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-7OTDYWacrsv8D1k6Akw1Zdx_sdB4cmtVpe7ke-y3JpJom3oPA32TrLnizlgflkuQZ0LrZsgP1HwSHQGpqHnt94HwWel6egVmfA0vRQkSPcYYjwJcvRJqg2PH1qqMFwwuNnAebIhEObxS-r7fBJ_ztg3YkRYD-VUufPYYqWPoDOh31w3y5RJs6HO9t9fMA4UUGFRiAPvHv2JgNcRpBToSPbZUhHAv7V3W-nNQsENxmty4qnxFT9zTRisdxaPjUlxnFYaU9LlkJ3u_"/>
+</div>
+<span class="bg-slate-900 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">BAT</span>
+<p class="font-utility-sm text-xs mt-1 truncate">Suryakumar</p>
+</div>
+</div>
+<!-- All Rounders -->
+<div class="flex justify-evenly">
+<div class="w-24 text-center group cursor-pointer">
+<div class="w-16 h-16 mx-auto rounded-full bg-white border-2 border-red-600 p-1 mb-2 group-hover:scale-110 transition-transform">
+<img class="w-full h-full rounded-full object-cover" data-alt="Portrait of a versatile professional athlete with a confident posture. The setting is a futuristic high-tech gym with soft ambient lighting and clean lines. The image aesthetic is premium and minimal, with a sharp focus on the athlete's professional gear and expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR6H1HCyX021ttIFbQ084-FK8U7-esBYDpJZmV7knfg821A0EBBNLPvIFusVCxkB58n9ZtfEHrXNnLICBKiJf7qta9KXr_5r3-LdROO0RP2vYIqt9QbnMl1CP3udlfQ7zILnwnWTQ-GaWhjMJMpsSmmCSLae4hiqBN0U203K2aR9fDuFFLe_R_ZcN1JkyMyOvVklWemSwKgMl_19VPJKhjy3mwZFYSzUH-Hnsw0fRQcRgojupf1nxN3wPY62mfKMr_j8JXZQcxVnaJ"/>
+</div>
+<span class="bg-slate-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">AR</span>
+<p class="font-utility-sm text-xs mt-1 truncate">Hardik Pandya</p>
+</div>
+<div class="w-24 text-center group cursor-pointer">
+<div class="w-16 h-16 mx-auto rounded-full bg-white border-2 border-red-600 p-1 mb-2 group-hover:scale-110 transition-transform">
+<img class="w-full h-full rounded-full object-cover" data-alt="Dynamic portrait of a professional sportsperson, focusing on their intense gaze and determined expression. The lighting is high-key and bright, evoking an elite broadcast feel. The color accents are primarily bold reds against a clean, neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZZobMGPdGjbsEPdU3AckzNR0P4qyjvakPhIGqfGVLaA60BiVyXWUYlhdYL0jJYq6PZtoAE5hlGf4uU2Wal6aGyWrwlANSnId8JiAjo0UUj41Bbw8mFi6h3oMYshb1DKa-acx-kWrI1VLoeOZH27MxRE16wCrlgAmvcdfVtQxgRvahdBU8ZpfejhSSSp9C2vP3UNpUQYNAUILGf3RhOD8ftuUYxU8_dbi_7SY5Z2t_ArUh1ZsDKyJ9YbvAShhAMZdlugl4f1c3EZok"/>
+</div>
+<span class="bg-slate-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">AR</span>
+<p class="font-utility-sm text-xs mt-1 truncate">Ravindra Jadeja</p>
+</div>
+</div>
+<!-- Bowlers -->
+<div class="flex justify-around">
+<div class="w-24 text-center group cursor-pointer">
+<div class="w-16 h-16 mx-auto rounded-full bg-white border-2 border-red-600 p-1 mb-2 group-hover:scale-110 transition-transform">
+<img class="w-full h-full rounded-full object-cover" data-alt="A portrait of a world-class fast bowler, with a background suggestive of high-stakes competition. The lighting is crisp and modern, creating sharp highlights on the player's face. The overall style is clean and energetic, consistent with a premium sports management app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvUG2XuNtrpndFgqgfPdzFVRiZwBkP3dGdWvu-YpYFl8XmQ8THVJDTv6Y37hFKr0fXgGzW7PqJgRSJ3hNDk56_0QndaNEJwF1DLoUZszZjlqXfLq4cNjAI8bqBHUEw_Exopi9ktq4oKksh5D8K4nGzvS5kUM5LB4zg9n1fQyOWofomvSiRAwLtH9nwP0Iq8FPxy4mDXaCv0WJev-fIbHxAtOEczpznr8dqBm_byUkHCcMEZhCXiXQ8bUu1vWkp2HEhgeOoLLlqKLHH"/>
+</div>
+<span class="bg-red-200 text-red-800 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">BWL</span>
+<p class="font-utility-sm text-xs mt-1 truncate">Jasprit Bumrah</p>
+</div>
+<div class="w-24 text-center group cursor-pointer">
+<div class="w-16 h-16 mx-auto rounded-full bg-white border-2 border-red-600 p-1 mb-2 group-hover:scale-110 transition-transform">
+<img class="w-full h-full rounded-full object-cover" data-alt="Professional athlete portrait with a clean, high-clarity glassmorphic overlay. The player is dressed in a vibrant red and white team kit. The background is a soft-focus stadium setting, suggesting an elite professional level. Lighting is natural and flattering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1fuCOopkqz1ivHEUIPSCgZxAStqg0jLePcc84sv0_OIXxnDJT3MPyolrE3HBCvRFvAz6IXeu14NMElCW4hg_eV-nDnqODDtBO7zqgHC4Hc6Jcthao3XjuLXJCQy5pI603Nxo-2TJCKUXIxtn4ntckDScldxsKZ3xYzJRtPiH2t15h8i81SF7yPo9HmkXhYSY4YfpgWKqIYU-ngmHHFh3skym7WTDX8lyJG-qxJprItU7q8VJuWHzswZ2jTowI3hb5O1mntLiyKtVz"/>
+</div>
+<span class="bg-red-200 text-red-800 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">BWL</span>
+<p class="font-utility-sm text-xs mt-1 truncate">Mohammed Shami</p>
+</div>
+<div class="w-24 text-center group cursor-pointer">
+<div class="w-16 h-16 mx-auto rounded-full bg-white border-2 border-red-600 p-1 mb-2 group-hover:scale-110 transition-transform">
+<img class="w-full h-full rounded-full object-cover" data-alt="Portrait of a modern sportsman, emphasizing a high-tech athletic aesthetic. The image features soft shadows and bright lighting, highlighting the player's professional intensity. Red accents provide a sense of energy and competition against the white-dominated palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsvJAhB1RUB98NI2q-AzOAjUxtDI5Ie-I_dK8mqHRaKa8XZXVbd7rM76JqkyrDLgDtaeFMVWnnaX6KVSD14r85fHuj_wo3O1AU5_6aUOceCaORHOsynzneYFciG-V8kcZVlId-5jRJy-bdcOgLowez61TwYGOdspauhs6KhPK91XKN0cRzXBPccFTjKaCeqqAknLGeM4dZfY_1_QWWBDU8iYpJ5OcGCDFU7Vbi6xtpEtIMjFocYqcYcmEoSPfr50mFF0jQBag40gXw"/>
+</div>
+<span class="bg-red-200 text-red-800 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">BWL</span>
+<p class="font-utility-sm text-xs mt-1 truncate">Kuldeep Yadav</p>
+</div>
+<div class="w-24 text-center group cursor-pointer">
+<div class="w-16 h-16 mx-auto rounded-full bg-white border-2 border-red-600 p-1 mb-2 group-hover:scale-110 transition-transform">
+<img class="w-full h-full rounded-full object-cover" data-alt="Close-up of a professional cricket bowler with a determined focus. The setting is a daylight stadium with vibrant green and blue hues in the background. The player is lit with high-key lighting that emphasizes athleticism and a elite status professional vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-PXpsjEVPT0K1rINy9xMRrDlCufhwwSs231sAQ2OmHhduh7vBW7VGu_U8NQbRU962CbH9y7LNvJGeSPSKPyHABhmayJCb3eka6obL6dp0qdSkv4CgadpdP_5-f2-gR3FKLjNIEWQhihl-u-xFe0eEctfoDOJODQ52X9Ty6n5pnowO8_0GezCsDu2nqg0Psa-iZfjbjNPeVoRmpxxeUCSHPC4_But6zngVkUsWHO4G6Y7FCTymdJtu7lLaa1JCL_TLaPCO2-lJ4EHx"/>
+</div>
+<span class="bg-red-200 text-red-800 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">BWL</span>
+<p class="font-utility-sm text-xs mt-1 truncate">Arshdeep Singh</p>
+</div>
+</div>
+</div>
+<!-- Right: Coaching Report -->
+<div class="col-span-4 flex flex-col gap-gutter">
+<div class="flex-1 glass-card border border-slate-200 rounded-xl p-lg flex flex-col">
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-red-600">smart_toy</span>
+<h3 class="font-headline-md text-sm uppercase tracking-widest text-on-surface">Coaching Report</h3>
+</div>
+<div class="space-y-md flex-1">
+<div class="p-4 bg-red-50/50 rounded-lg border border-red-100">
+<p class="text-xs font-bold text-red-600 uppercase mb-1">Squad Insight #01</p>
+<p class="text-sm font-body-md text-slate-700 leading-relaxed">
+                                        Your top-order stability is ranked in the top 5th percentile. Kohli and Sharma provide a combined average of 42.4 in powerplay overs.
+                                    </p>
+</div>
+<div class="p-4 bg-white/50 rounded-lg border border-slate-200">
+<p class="text-xs font-bold text-slate-500 uppercase mb-1">Squad Insight #02</p>
+<p class="text-sm font-body-md text-slate-700 leading-relaxed">
+                                        Middle order strength is currently at 82%. Consider swapping Arshdeep for a batting all-rounder if chasing high totals on smaller grounds.
+                                    </p>
+</div>
+<div class="p-4 bg-white/50 rounded-lg border border-slate-200">
+<p class="text-xs font-bold text-slate-500 uppercase mb-1">AI Recommendation</p>
+<p class="text-sm font-body-md text-slate-700 leading-relaxed font-mono">
+                                        &gt; Analyzing death bowling efficacy...<br/>
+                                        &gt; Bumrah-Shami duo expected economy: 7.82<br/>
+                                        &gt; Strategy: High Aggression
+                                    </p>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-slate-200">
+<button class="w-full py-2 bg-slate-900 text-white rounded font-utility-sm uppercase tracking-widest hover:bg-red-600 transition-colors">
+                                    Detailed Analysis
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Stats Dashboard -->
+<section class="grid grid-cols-3 gap-gutter">
+<!-- Total Investment -->
+<div class="glass-card border border-slate-200 rounded-xl p-lg relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-red-600"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Total Investment</p>
+<h4 class="text-3xl font-label-red text-red-600">₹98.50 Cr</h4>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-red-600 transition-colors">account_balance_wallet</span>
+</div>
+<div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-red-600" style="width: 98.5%"></div>
+</div>
+<p class="text-[10px] text-slate-500 mt-2 font-bold uppercase tracking-tighter">Remaining: ₹1.50 Cr / ₹100 Cr Limit</p>
+</div>
+<!-- Bowling Variety Score -->
+<div class="glass-card border border-slate-200 rounded-xl p-lg relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-red-600"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Bowling Variety Score</p>
+<h4 class="text-3xl font-headline-md text-on-surface">94 / 100</h4>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-red-600 transition-colors">analytics</span>
+</div>
+<div class="flex gap-2">
+<div class="h-1 flex-1 bg-red-600 rounded"></div>
+<div class="h-1 flex-1 bg-red-600 rounded"></div>
+<div class="h-1 flex-1 bg-red-600 rounded"></div>
+<div class="h-1 flex-1 bg-red-600 rounded"></div>
+<div class="h-1 flex-1 bg-slate-200 rounded"></div>
+</div>
+<p class="text-[10px] text-slate-500 mt-2 font-bold uppercase tracking-tighter">Elite: 2 Pace, 1 Swing, 2 Spin Specialists</p>
+</div>
+<!-- Middle Order Strength -->
+<div class="glass-card border border-slate-200 rounded-xl p-lg relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-red-600"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Middle Order Strength</p>
+<h4 class="text-3xl font-headline-md text-on-surface">82.1</h4>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-red-600 transition-colors">trending_up</span>
+</div>
+<div class="flex items-end gap-1 h-8">
+<div class="w-full bg-red-100 h-[60%] rounded-t"></div>
+<div class="w-full bg-red-200 h-[40%] rounded-t"></div>
+<div class="w-full bg-red-400 h-[80%] rounded-t"></div>
+<div class="w-full bg-red-600 h-[95%] rounded-t"></div>
+<div class="w-full bg-red-300 h-[70%] rounded-t"></div>
+</div>
+<p class="text-[10px] text-slate-500 mt-2 font-bold uppercase tracking-tighter">Based on last 5 seasons' strike rate</p>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB for quick action -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-red-600 text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined">bolt</span>
+</button>
+</body></html>

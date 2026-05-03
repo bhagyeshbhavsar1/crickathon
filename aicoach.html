@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>APEX REDLINE | AI Coach</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#131b2e",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#410002",
+                        "surface-container": "#eceef0",
+                        "on-background": "#191c1e",
+                        "on-primary-container": "#fff6f5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-surface": "#191c1e",
+                        "primary-fixed": "#ffdad6",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary": "#51596f",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#e6bdb8",
+                        "surface-tint": "#bf0715",
+                        "tertiary-container": "#6a7188",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-container": "#f8f7ff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-variant": "#e0e3e5",
+                        "primary-fixed-dim": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-dim": "#d8dadc",
+                        "surface-bright": "#f7f9fb",
+                        "secondary-container": "#dfe0e0",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "secondary": "#5d5f5f",
+                        "on-secondary-container": "#616363",
+                        "inverse-primary": "#ffb4ab",
+                        "on-error-container": "#93000a",
+                        "outline": "#916f6b",
+                        "primary": "#b70011",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "primary-container": "#dc2626",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed": "#dae2fd",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "on-surface-variant": "#5c403c",
+                        "on-primary-fixed-variant": "#93000b",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "container-padding": "24px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "utility-sm": ["Lexend"],
+                        "label-red": ["Lexend"],
+                        "headline-md": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "utility-sm": ["12px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "label-red": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .pitch-watermark {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600"><rect x="150" y="200" width="100" height="200" fill="none" stroke="rgba(220, 38, 38, 0.03)" stroke-width="2"/><circle cx="200" cy="300" r="180" fill="none" stroke="rgba(220, 38, 38, 0.03)" stroke-width="2"/><line x1="0" y1="300" x2="400" y2="300" stroke="rgba(220, 38, 38, 0.03)" stroke-width="2"/></svg>');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 8px 32px rgba(15, 23, 42, 0.05);
+        }
+        .neon-loader {
+            border: 2px solid transparent;
+            border-top-color: #DC2626;
+            border-radius: 50%;
+            width: 1.25rem;
+            height: 1.25rem;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased pitch-watermark min-h-screen">
+<!-- TopAppBar Component -->
+<header class="bg-white/70 backdrop-blur-xl border-b border-slate-200 docked full-width top-0 z-50 sticky shadow-sm shadow-slate-200/50">
+<div class="flex justify-between items-center w-full px-6 py-3">
+<div class="flex items-center gap-md">
+<span class="text-xl font-black italic tracking-tighter text-red-600">APEX REDLINE</span>
+</div>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-slate-500 hover:text-red-500 font-['Inter'] font-semibold tracking-tight transition-colors" href="#">Draft Pool</a>
+<a class="text-slate-500 hover:text-red-500 font-['Inter'] font-semibold tracking-tight transition-colors" href="#">Pitch View</a>
+<a class="text-slate-500 hover:text-red-500 font-['Inter'] font-semibold tracking-tight transition-colors" href="#">Team Analytics</a>
+<a class="text-red-600 font-bold border-b-2 border-red-600 font-['Inter'] tracking-tight" href="#">AI Coach</a>
+<a class="text-slate-500 hover:text-red-500 font-['Inter'] font-semibold tracking-tight transition-colors" href="#">History</a>
+</nav>
+<div class="flex items-center gap-md">
+<div class="bg-surface-container px-md py-sm rounded-full hidden sm:block">
+<span class="font-label-red text-label-red text-red-600">Budget: ₹100.0 Cr</span>
+</div>
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-50/50 p-sm rounded-full transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-50/50 p-sm rounded-full transition-colors" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</header>
+<div class="flex min-h-[calc(100vh-64px)]">
+<!-- SideNavBar Component -->
+<aside class="fixed left-0 top-0 h-full flex flex-col pt-16 bg-white/70 backdrop-blur-xl border-r border-slate-200 w-64 hidden lg:flex">
+<div class="px-lg py-md mb-md border-b border-slate-100">
+<div class="flex items-center gap-sm">
+<img alt="IPL Logo" class="w-10 h-10 rounded-lg bg-red-600/10 p-1" data-alt="A professional minimalist logo icon for a sports team management software featuring geometric red and white abstract shapes against a light grey background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-tKeBjETiUaPdwwh_JxvTvCHyni507V3SYBp_KwpuHvGHleJlCa7qU1cwQNfjDi03vJdJYlZxBjyuwAqTHX-lFFh6yZXsnap5dMIExhcDkNJ2O_e0NO0Xnpvqkyxqk1Xloq7DQDtTgUPLD18wRojUAWld1Cyb5T8ViN5jO6jYRQHu9fyhRVdkBxaEAAv4-psALLendZ5KCsMYhAM7IF459JPv5ONA4g-FVHwS3cNWPgtig0hwJztnYbiHsUQoZMqgrCEuRInawR1g"/>
+<div>
+<h2 class="text-red-600 font-black font-utility-sm text-sm uppercase">Squad Manager</h2>
+<p class="text-xs text-slate-400 font-['Inter']">2024 Season</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-sm space-y-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-slate-600 hover:bg-slate-50 hover:text-red-600 transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+                    Draft Pool
+                </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-slate-600 hover:bg-slate-50 hover:text-red-600 transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="sports_cricket">sports_cricket</span>
+                    Pitch View
+                </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-slate-600 hover:bg-slate-50 hover:text-red-600 transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    Team Analytics
+                </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-red-600 font-bold border-r-4 border-red-600 bg-red-50/50 transition-all font-['Inter'] text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+                    AI Coach
+                </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-slate-600 hover:bg-slate-50 hover:text-red-600 transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                    History
+                </a>
+</nav>
+<div class="p-lg">
+<button class="w-full bg-red-600 text-white py-md px-lg rounded font-bold hover:bg-red-700 transition-all flex items-center justify-center gap-sm active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    New Simulation
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 p-container-padding">
+<div class="max-w-6xl mx-auto space-y-xl">
+<!-- Verdict Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-lg border-l-4 border-red-600 pl-lg py-md">
+<div>
+<span class="font-label-red text-red-600 tracking-widest uppercase mb-xs block">Season Analysis Outlook</span>
+<h1 class="font-display-xl text-display-xl text-on-surface uppercase italic">CHAMPION MATERIAL</h1>
+</div>
+<button class="flex items-center gap-sm bg-white border border-slate-200 px-lg py-sm rounded-full shadow-sm hover:bg-slate-50 transition-all group active:scale-95">
+<div class="neon-loader"></div>
+<span class="font-label-red text-red-600 uppercase">Re-Analyze Pool</span>
+</button>
+</section>
+<!-- Bento Grid Tactical Breakdown -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Strengths -->
+<div class="glass-card p-lg rounded-xl flex flex-col gap-md">
+<div class="flex items-center gap-sm text-red-600">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<h3 class="font-headline-md text-headline-md uppercase">Strengths</h3>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-sm p-sm bg-red-50/50 rounded-lg border-l-2 border-red-600">
+<span class="text-utility-sm font-utility-sm text-red-600">TOP 1</span>
+<p class="text-body-md font-body-md text-on-surface">Explosive Powerplay Strike Rate (165.4)</p>
+</div>
+<p class="text-body-md text-secondary leading-relaxed">Your opening pair dominates early overs. The middle-order transition is statistically superior to 85% of simulated rosters.</p>
+</div>
+</div>
+<!-- Critical Flaws -->
+<div class="glass-card p-lg rounded-xl flex flex-col gap-md">
+<div class="flex items-center gap-sm text-red-600">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<h3 class="font-headline-md text-headline-md uppercase">Critical Flaws</h3>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-sm p-sm bg-slate-50 rounded-lg border-l-2 border-slate-400">
+<span class="text-utility-sm font-utility-sm text-slate-600">ALERT</span>
+<p class="text-body-md font-body-md text-on-surface">Death Over Economy (11.2 RPO)</p>
+</div>
+<p class="text-body-md text-secondary leading-relaxed">High vulnerability in the final 4 overs. Lack of specialized yorker specialists might lead to 15-20 extra runs conceded.</p>
+</div>
+</div>
+<!-- X-Factor -->
+<div class="glass-card p-lg rounded-xl flex flex-col gap-md">
+<div class="flex items-center gap-sm text-red-600">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline-md text-headline-md uppercase">X-Factor</h3>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-sm p-sm bg-red-600 text-white rounded-lg">
+<span class="text-utility-sm font-utility-sm">HIDDEN</span>
+<p class="text-body-md font-medium">Rashid Khan's Batting Upside</p>
+</div>
+<p class="text-body-md text-secondary leading-relaxed">Simulations show a 22% increase in win probability when Rashid acts as a pinch hitter at Number 7 against leg-spinners.</p>
+</div>
+</div>
+</section>
+<!-- Suggested Trade Box -->
+<section class="glass-card p-xl rounded-xl border-l-8 border-red-600 relative overflow-hidden">
+<div class="absolute right-0 top-0 h-full w-1/3 opacity-10 pointer-events-none">
+<img alt="Stadium" class="h-full w-full object-cover" data-alt="An abstract, high-contrast black and white architectural shot of a modern cricket stadium at night. The stadium is illuminated by powerful floodlights that cast dramatic red glows across the sleek, curved structural elements. The atmosphere is professional, elite, and high-energy, mirroring a broadcast-ready sports environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpd1bxBe6SzYe2arphs9gBHzB3yTnk-zSmOJyH8074N-PS8OeO1KlrI6Dt5maHa6pNv4gavIrj7u7Bc4vR3dsFJ2joZa8gA_kTld7lujkbWraaqJWRl1d5cmHuzBsSctYVcn9qUsMQgPUqMb3_4SKB9DaBNwabS_2rSRLn5kiSczOCCjPkHK2CYLFzb8wwB95AtFPLQiWah1RZhJ2EMxCV0sgRbx7XzfdV98C0TEc3SNRAhMgTyvDhqQoDCQHad185VVafe6wFIpC5"/>
+</div>
+<div class="relative z-10 space-y-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-red-600" data-icon="swap_horizontal_circle">swap_horizontal_circle</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">Recommended Trade</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl">
+<div class="space-y-md">
+<p class="text-body-lg text-secondary">To fix the death bowling economy crisis, the AI recommends swapping an overseas specialist.</p>
+<div class="flex items-center gap-md p-md bg-white border border-slate-200 rounded-xl shadow-sm">
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400" data-icon="person">person</span>
+</div>
+<span class="text-xs font-bold text-red-600 mt-1 uppercase">Out</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-md text-headline-md">D. Warner</h4>
+<p class="text-sm text-slate-500">₹12.5 Cr | Batter</p>
+</div>
+<span class="material-symbols-outlined text-slate-300" data-icon="trending_flat">trending_flat</span>
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="person">person</span>
+</div>
+<span class="text-xs font-bold text-red-600 mt-1 uppercase">In</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-md text-headline-md">M. Starc</h4>
+<p class="text-sm text-slate-500">₹10.5 Cr | Bowler</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-md">
+<div class="bg-red-50 p-md rounded-lg border border-red-100">
+<div class="flex justify-between mb-sm">
+<span class="text-sm font-semibold text-red-600 uppercase">Projected Impact</span>
+<span class="text-sm font-bold text-red-600">+12% Win Chance</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+<div class="bg-red-600 h-full w-[78%]"></div>
+</div>
+</div>
+<button class="w-full bg-red-600 text-on-primary py-md rounded-lg font-bold uppercase tracking-widest hover:bg-red-700 transition-all shadow-md active:scale-95">Execute Swap</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Ask the Coach Chat UI -->
+<section class="glass-card p-md rounded-2xl shadow-xl border-slate-200 mt-xl">
+<div class="flex flex-col gap-md">
+<div class="flex items-center gap-md px-md border-b border-slate-100 pb-sm">
+<div class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white" data-icon="smart_toy">smart_toy</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-sm">Ask Strategy Coach</h3>
+<p class="text-xs text-slate-400">AI-Powered Insights based on 10k simulations</p>
+</div>
+</div>
+<div class="px-md py-sm">
+<div class="bg-slate-50 p-md rounded-xl text-body-md text-secondary inline-block max-w-[80%] border border-slate-100">
+                                How should I balance the budget if I pick Virat Kohli as my captain?
+                            </div>
+</div>
+<div class="relative flex items-center gap-sm">
+<input class="w-full bg-white border-slate-200 focus:ring-red-600 focus:border-red-600 rounded-full px-lg py-md text-body-md shadow-inner" placeholder="Ask about team balance, player stats, or match-ups..." type="text"/>
+<button class="absolute right-2 p-md bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+<div class="flex gap-sm px-md pb-xs">
+<button class="text-utility-sm font-utility-sm border border-slate-200 px-md py-xs rounded-full hover:bg-red-50 hover:border-red-200 transition-all">Best death bowlers?</button>
+<button class="text-utility-sm font-utility-sm border border-slate-200 px-md py-xs rounded-full hover:bg-red-50 hover:border-red-200 transition-all">Spin utility check</button>
+<button class="text-utility-sm font-utility-sm border border-slate-200 px-md py-xs rounded-full hover:bg-red-50 hover:border-red-200 transition-all">Budget picks under 2Cr</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- Mobile BottomNavBar (Hidden on desktop) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-xl border-t border-slate-200 flex justify-around py-sm px-md z-50">
+<button class="flex flex-col items-center gap-xs text-slate-400">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="text-[10px] font-bold">POOL</span>
+</button>
+<button class="flex flex-col items-center gap-xs text-slate-400">
+<span class="material-symbols-outlined" data-icon="sports_cricket">sports_cricket</span>
+<span class="text-[10px] font-bold">PITCH</span>
+</button>
+<button class="flex flex-col items-center gap-xs text-red-600">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="text-[10px] font-bold">COACH</span>
+</button>
+<button class="flex flex-col items-center gap-xs text-slate-400">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="text-[10px] font-bold">HISTORY</span>
+</button>
+</nav>
+</body></html>
