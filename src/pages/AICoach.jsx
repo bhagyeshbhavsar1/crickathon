@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import CoachChat from '../components/CoachChat';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { useSquadStore } from '../store/useSquadStore';
 
@@ -62,56 +61,7 @@ Provide a brief, tactical, and helpful response. Keep it under 3-4 sentences.`;
             animate={{ opacity: 1, y: 0 }}
             className="p-4 md:p-8 max-w-6xl mx-auto space-y-8 h-full overflow-y-auto pb-24 lg:pb-8"
         >
-            {/* Dynamic AI Engine Section */}
-            <CoachChat />
 
-            {/* Bento Grid Tactical Breakdown */}
-            <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Strengths */}
-                <motion.div whileHover={{ y: -5 }} className="glass-card p-6 rounded-xl flex flex-col gap-4">
-                    <div className="flex items-center gap-2 text-red-600">
-                        <span className="material-symbols-outlined">trending_up</span>
-                        <h3 className="font-headline-md text-xl uppercase">Strengths</h3>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="flex items-center gap-2 p-2 bg-red-50/50 rounded-lg border-l-2 border-red-600">
-                            <span className="text-xs font-bold text-red-600">TOP 1</span>
-                            <p className="text-sm font-medium text-on-surface">Explosive Powerplay Strike Rate (165.4)</p>
-                        </div>
-                        <p className="text-sm text-slate-500 leading-relaxed">Your opening pair dominates early overs. The middle-order transition is statistically superior to 85% of simulated rosters.</p>
-                    </div>
-                </motion.div>
-
-                {/* Critical Flaws */}
-                <motion.div whileHover={{ y: -5 }} className="glass-card p-6 rounded-xl flex flex-col gap-4">
-                    <div className="flex items-center gap-2 text-red-600">
-                        <span className="material-symbols-outlined">warning</span>
-                        <h3 className="font-headline-md text-xl uppercase">Critical Flaws</h3>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="flex items-center gap-2 p-2 bg-slate-50 rounded-lg border-l-2 border-slate-400">
-                            <span className="text-xs font-bold text-slate-600">ALERT</span>
-                            <p className="text-sm font-medium text-on-surface">Death Over Economy (11.2 RPO)</p>
-                        </div>
-                        <p className="text-sm text-slate-500 leading-relaxed">High vulnerability in the final 4 overs. Lack of specialized yorker specialists might lead to 15-20 extra runs conceded.</p>
-                    </div>
-                </motion.div>
-
-                {/* X-Factor */}
-                <motion.div whileHover={{ y: -5 }} className="glass-card p-6 rounded-xl flex flex-col gap-4">
-                    <div className="flex items-center gap-2 text-red-600">
-                        <span className="material-symbols-outlined">auto_awesome</span>
-                        <h3 className="font-headline-md text-xl uppercase">X-Factor</h3>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="flex items-center gap-2 p-2 bg-red-600 text-white rounded-lg">
-                            <span className="text-xs font-bold">HIDDEN</span>
-                            <p className="text-sm font-medium">Rashid Khan's Batting Upside</p>
-                        </div>
-                        <p className="text-sm text-slate-500 leading-relaxed">Simulations show a 22% increase in win probability when Rashid acts as a pinch hitter at Number 7 against leg-spinners.</p>
-                    </div>
-                </motion.div>
-            </section>
 
 
 
