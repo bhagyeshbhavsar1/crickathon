@@ -1,101 +1,11 @@
 [
     {
-        "id": "p1",
-        "name": "MS Dhoni",
-        "team": "CSK",
-        "role": "Wicket-keeper",
-        "rating": 88,
-        "price": 4,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
-        "formGuide": "L/L/W/W/W",
-        "impactScore": 92,
-        "recentMatchStats": {
-            "highScore": 88,
-            "strikeRate": "166.41",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p2",
-        "name": "Ruturaj Gaikwad",
-        "team": "CSK",
-        "role": "Batter",
-        "rating": 92,
-        "price": 8,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
-        "formGuide": "L/L/W/W/W",
-        "impactScore": 95,
-        "recentMatchStats": {
-            "highScore": 69,
-            "strikeRate": "139.97",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p3",
-        "name": "Ravindra Jadeja",
-        "team": "CSK",
-        "role": "All-rounder",
-        "rating": 95,
-        "price": 9,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
-        "formGuide": "W/L/W/W/L",
-        "impactScore": 97,
-        "recentMatchStats": {
-            "highScore": 54,
-            "strikeRate": "175.71",
-            "bestFigures": "3/19",
-            "economyRate": "6.8"
-        }
-    },
-    {
-        "id": "p4",
-        "name": "Matheesha Pathirana",
-        "team": "CSK",
-        "role": "Bowler",
-        "rating": 89,
-        "price": 6.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
-        "formGuide": "L/L/W/W/W",
-        "impactScore": 93,
-        "recentMatchStats": {
-            "highScore": "N/A",
-            "strikeRate": "N/A",
-            "bestFigures": "2/25",
-            "economyRate": "8.4"
-        }
-    },
-    {
-        "id": "p5",
-        "name": "Rohit Sharma",
-        "team": "MI",
-        "role": "Batter",
-        "rating": 94,
-        "price": 10,
-        "image": "/assets/sharma.jpg",
-        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
-        "formGuide": "L/L/W/W/W",
-        "impactScore": 96,
-        "recentMatchStats": {
-            "highScore": 96,
-            "strikeRate": "150.70",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
         "id": "p6",
         "name": "Jasprit Bumrah",
         "team": "MI",
         "role": "Bowler",
         "rating": 98,
-        "price": 10.5,
+        "price": 16,
         "image": "/assets/bumrah.jpg",
         "aiInsight": "Death Over Specialist. Unrivaled economy and wicket-taking ability under extreme pressure. Highly disruptive.",
         "formGuide": "L/W/W/L/W",
@@ -107,42 +17,19 @@
             "economyRate": 6.4,
             "wickets": 18,
             "matches": 10
-        }
-    },
-    {
-        "id": "p7",
-        "name": "Suryakumar Yadav",
-        "team": "MI",
-        "role": "Batter",
-        "rating": 96,
-        "price": 10,
-        "image": "/assets/surya.jpg",
-        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
-        "formGuide": "L/L/W/W/W",
-        "impactScore": 98,
-        "recentMatchStats": {
-            "highScore": 25,
-            "strikeRate": "134.99",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p8",
-        "name": "Hardik Pandya",
-        "team": "MI",
-        "role": "All-rounder",
-        "rating": 93,
-        "price": 9.5,
-        "image": "/assets/hardik.jpg",
-        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
-        "formGuide": "L/W/W/L/W",
-        "impactScore": 95,
-        "recentMatchStats": {
-            "highScore": 30,
-            "strikeRate": "177.16",
-            "bestFigures": "3/12",
-            "economyRate": "7.9"
+        },
+        "background": "Pace sensation ready to rattle the stumps in the death overs.",
+        "strengths": [
+            "Deceptive slower ball",
+            "Economical in Powerplay"
+        ],
+        "weaknesses": [
+            "Predictable length",
+            "Can leak runs in death overs"
+        ],
+        "prosCons": {
+            "pro": "Guaranteed 4 overs",
+            "con": "High Budget Consumption"
         }
     },
     {
@@ -151,7 +38,7 @@
         "team": "RCB",
         "role": "Batter",
         "rating": 97,
-        "price": 10.5,
+        "price": 16,
         "image": "/assets/kohli.jpg",
         "aiInsight": "Anchor/Opener. Extreme consistency; 8,661 career IPL runs. The ultimate backbone for any batting lineup.",
         "formGuide": "L/W/W/L/W",
@@ -164,78 +51,267 @@
             "runs": 379,
             "matches": 9,
             "avg": 54.14
+        },
+        "background": "Young prodigy known for orthodox technique and explosive power.",
+        "strengths": [
+            "High Strike Rate against Spin",
+            "Excellent runner between wickets"
+        ],
+        "weaknesses": [
+            "Vulnerable to Short Balls",
+            "Slow starter"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "High Budget Consumption"
         }
     },
     {
-        "id": "p10",
-        "name": "Glenn Maxwell",
-        "team": "RCB",
-        "role": "All-rounder",
-        "rating": 90,
-        "price": 8.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
-        "formGuide": "L/W/W/L/W",
-        "impactScore": 90,
+        "id": "p7",
+        "name": "Suryakumar Yadav",
+        "team": "MI",
+        "role": "Batter",
+        "rating": 96,
+        "price": 15,
+        "image": "/assets/surya.jpg",
+        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
+        "formGuide": "L/L/W/W/W",
+        "impactScore": 98,
         "recentMatchStats": {
-            "highScore": 49,
-            "strikeRate": "139.79",
-            "bestFigures": "3/20",
-            "economyRate": "8.9"
+            "highScore": 25,
+            "strikeRate": "134.99",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Coming off a spectacular domestic season, looking to solidify the top order.",
+        "strengths": [
+            "High Strike Rate against Spin",
+            "Excellent runner between wickets"
+        ],
+        "weaknesses": [
+            "Vulnerable to Short Balls",
+            "Struggles against left-arm pace"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "High Budget Consumption"
         }
     },
     {
-        "id": "p11",
-        "name": "Mohammed Siraj",
-        "team": "RCB",
+        "id": "p19",
+        "name": "Heinrich Klaasen",
+        "team": "SRH",
+        "role": "Wicket-keeper",
+        "rating": 96,
+        "price": 15,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
+        "formGuide": "W/W/W/L/W",
+        "impactScore": 100,
+        "recentMatchStats": {
+            "highScore": 29,
+            "strikeRate": "139.97",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Experienced leader who controls the game tempo from the back.",
+        "strengths": [
+            "Great DRS judge",
+            "Anchors the innings"
+        ],
+        "weaknesses": [
+            "Struggles with extreme pace",
+            "Inconsistent glovework on turning tracks"
+        ],
+        "prosCons": {
+            "pro": "Solves two team roles",
+            "con": "High Budget Consumption"
+        }
+    },
+    {
+        "id": "p38",
+        "name": "Rashid Khan",
+        "team": "GT",
         "role": "Bowler",
-        "rating": 88,
-        "price": 7,
+        "rating": 96,
+        "price": 14,
         "image": "/assets/avatar.jpg",
         "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
-        "formGuide": "W/L/W/W/L",
-        "impactScore": 92,
+        "formGuide": "W/W/W/L/W",
+        "impactScore": 97,
         "recentMatchStats": {
             "highScore": "N/A",
             "strikeRate": "N/A",
-            "bestFigures": "2/19",
+            "bestFigures": "1/16",
             "economyRate": "7.8"
+        },
+        "background": "Experienced seamer with an uncanny ability to strike in the powerplay.",
+        "strengths": [
+            "Economical in Powerplay",
+            "Sharp turn and bounce"
+        ],
+        "weaknesses": [
+            "Less effective on flat pitches",
+            "Struggles with no-balls"
+        ],
+        "prosCons": {
+            "pro": "Guaranteed 4 overs",
+            "con": "High Budget Consumption"
         }
     },
     {
-        "id": "p12",
-        "name": "Rajat Patidar",
-        "team": "RCB",
+        "id": "p3",
+        "name": "Ravindra Jadeja",
+        "team": "CSK",
+        "role": "All-rounder",
+        "rating": 95,
+        "price": 16,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
+        "formGuide": "W/L/W/W/L",
+        "impactScore": 97,
+        "recentMatchStats": {
+            "highScore": 54,
+            "strikeRate": "175.71",
+            "bestFigures": "3/19",
+            "economyRate": "6.8"
+        },
+        "background": "Reliable middle-order anchor who can deliver 4 tight overs of spin.",
+        "strengths": [
+            "Breaks crucial partnerships",
+            "Clears the ropes easily"
+        ],
+        "weaknesses": [
+            "Inconsistent batting form",
+            "Sometimes expensive with the ball"
+        ],
+        "prosCons": {
+            "pro": "Provides immense flexibility",
+            "con": "High Budget Consumption"
+        }
+    },
+    {
+        "id": "p18",
+        "name": "Travis Head",
+        "team": "SRH",
         "role": "Batter",
-        "rating": 85,
-        "price": 5,
+        "rating": 95,
+        "price": 16,
         "image": "/assets/avatar.jpg",
         "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
-        "formGuide": "L/W/W/L/W",
-        "impactScore": 89,
+        "formGuide": "W/W/W/L/W",
+        "impactScore": 95,
         "recentMatchStats": {
             "highScore": 23,
-            "strikeRate": "168.48",
+            "strikeRate": "142.86",
             "bestFigures": "N/A",
             "economyRate": "N/A"
+        },
+        "background": "Coming off a spectacular domestic season, looking to solidify the top order.",
+        "strengths": [
+            "High Strike Rate against Spin",
+            "Excellent runner between wickets"
+        ],
+        "weaknesses": [
+            "Vulnerable to Short Balls",
+            "Struggles against left-arm pace"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "High Budget Consumption"
         }
     },
     {
-        "id": "p13",
-        "name": "Shreyas Iyer",
-        "team": "KKR",
-        "role": "Batter",
-        "rating": 89,
-        "price": 7.5,
+        "id": "p23",
+        "name": "Jos Buttler",
+        "team": "RR",
+        "role": "Wicket-keeper",
+        "rating": 95,
+        "price": 16,
         "image": "/assets/avatar.jpg",
-        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
-        "formGuide": "L/W/W/L/W",
-        "impactScore": 93,
+        "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
+        "formGuide": "L/L/W/W/W",
+        "impactScore": 96,
         "recentMatchStats": {
-            "highScore": 98,
-            "strikeRate": "131.30",
+            "highScore": 43,
+            "strikeRate": "173.46",
             "bestFigures": "N/A",
             "economyRate": "N/A"
+        },
+        "background": "Agile behind the stumps and destructive in front of them.",
+        "strengths": [
+            "Explosive finisher",
+            "Anchors the innings"
+        ],
+        "weaknesses": [
+            "Poor communication while running",
+            "Low strike rate in middle overs"
+        ],
+        "prosCons": {
+            "pro": "Solves two team roles",
+            "con": "High Budget Consumption"
+        }
+    },
+    {
+        "id": "p37",
+        "name": "Shubman Gill",
+        "team": "GT",
+        "role": "Batter",
+        "rating": 95,
+        "price": 15,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
+        "formGuide": "W/L/W/W/L",
+        "impactScore": 98,
+        "recentMatchStats": {
+            "highScore": 52,
+            "strikeRate": "154.09",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "A seasoned veteran bringing aggressive intent and stability to the crease.",
+        "strengths": [
+            "Powerplay dominator",
+            "High Strike Rate against Spin"
+        ],
+        "weaknesses": [
+            "Struggles against left-arm pace",
+            "Prone to risky shots"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "High Budget Consumption"
+        }
+    },
+    {
+        "id": "p5",
+        "name": "Rohit Sharma",
+        "team": "MI",
+        "role": "Batter",
+        "rating": 94,
+        "price": 15,
+        "image": "/assets/sharma.jpg",
+        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
+        "formGuide": "L/L/W/W/W",
+        "impactScore": 96,
+        "recentMatchStats": {
+            "highScore": 96,
+            "strikeRate": "150.70",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Coming off a spectacular domestic season, looking to solidify the top order.",
+        "strengths": [
+            "High Strike Rate against Spin",
+            "Excellent runner between wickets"
+        ],
+        "weaknesses": [
+            "Vulnerable to Short Balls",
+            "Struggles against left-arm pace"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "High Budget Consumption"
         }
     },
     {
@@ -244,7 +320,7 @@
         "team": "KKR",
         "role": "All-rounder",
         "rating": 94,
-        "price": 8.5,
+        "price": 16,
         "image": "/assets/avatar.jpg",
         "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
         "formGuide": "L/W/W/L/W",
@@ -254,42 +330,112 @@
             "strikeRate": "174.06",
             "bestFigures": "3/28",
             "economyRate": "8.6"
+        },
+        "background": "Explosive finisher and utility medium-pacer crucial for team balance.",
+        "strengths": [
+            "Dual threat match-winner",
+            "Excellent fielder"
+        ],
+        "weaknesses": [
+            "Inconsistent batting form",
+            "Sometimes expensive with the ball"
+        ],
+        "prosCons": {
+            "pro": "Provides immense flexibility",
+            "con": "High Budget Consumption"
         }
     },
     {
-        "id": "p15",
-        "name": "Rinku Singh",
-        "team": "KKR",
+        "id": "p22",
+        "name": "Yashasvi Jaiswal",
+        "team": "RR",
         "role": "Batter",
-        "rating": 91,
-        "price": 7,
+        "rating": 94,
+        "price": 14,
         "image": "/assets/avatar.jpg",
         "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
         "formGuide": "L/W/W/L/W",
-        "impactScore": 95,
+        "impactScore": 97,
         "recentMatchStats": {
-            "highScore": 69,
-            "strikeRate": "144.14",
+            "highScore": 85,
+            "strikeRate": "157.52",
             "bestFigures": "N/A",
             "economyRate": "N/A"
+        },
+        "background": "Coming off a spectacular domestic season, looking to solidify the top order.",
+        "strengths": [
+            "High Strike Rate against Spin",
+            "Excellent runner between wickets"
+        ],
+        "weaknesses": [
+            "Struggles against left-arm pace",
+            "Slow starter"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "High Budget Consumption"
         }
     },
     {
-        "id": "p16",
-        "name": "Mitchell Starc",
-        "team": "KKR",
-        "role": "Bowler",
-        "rating": 92,
+        "id": "p34",
+        "name": "Nicholas Pooran",
+        "team": "LSG",
+        "role": "Wicket-keeper",
+        "rating": 94,
         "price": 10,
         "image": "/assets/avatar.jpg",
-        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
-        "formGuide": "L/L/W/W/W",
-        "impactScore": 93,
+        "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
+        "formGuide": "W/L/W/W/L",
+        "impactScore": 94,
         "recentMatchStats": {
-            "highScore": "N/A",
-            "strikeRate": "N/A",
-            "bestFigures": "1/27",
-            "economyRate": "8.7"
+            "highScore": 92,
+            "strikeRate": "157.58",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Athletic modern keeper-batter prioritizing aggressive strike rates.",
+        "strengths": [
+            "Anchors the innings",
+            "Explosive finisher"
+        ],
+        "weaknesses": [
+            "Struggles with extreme pace",
+            "Poor communication while running"
+        ],
+        "prosCons": {
+            "pro": "Solves two team roles",
+            "con": "High physical fatigue during tournaments"
+        }
+    },
+    {
+        "id": "p8",
+        "name": "Hardik Pandya",
+        "team": "MI",
+        "role": "All-rounder",
+        "rating": 93,
+        "price": 10.5,
+        "image": "/assets/hardik.jpg",
+        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
+        "formGuide": "L/W/W/L/W",
+        "impactScore": 95,
+        "recentMatchStats": {
+            "highScore": 30,
+            "strikeRate": "177.16",
+            "bestFigures": "3/12",
+            "economyRate": "7.9"
+        },
+        "background": "Explosive finisher and utility medium-pacer crucial for team balance.",
+        "strengths": [
+            "Breaks crucial partnerships",
+            "Dual threat match-winner"
+        ],
+        "weaknesses": [
+            "Takes time to settle",
+            "Inconsistent batting form"
+        ],
+        "prosCons": {
+            "pro": "Provides immense flexibility",
+            "con": "Often overworked in high-pressure games"
         }
     },
     {
@@ -308,132 +454,19 @@
             "strikeRate": "136.70",
             "bestFigures": "2/23",
             "economyRate": "9.1"
-        }
-    },
-    {
-        "id": "p18",
-        "name": "Travis Head",
-        "team": "SRH",
-        "role": "Batter",
-        "rating": 95,
-        "price": 10,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
-        "formGuide": "W/W/W/L/W",
-        "impactScore": 95,
-        "recentMatchStats": {
-            "highScore": 23,
-            "strikeRate": "142.86",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p19",
-        "name": "Heinrich Klaasen",
-        "team": "SRH",
-        "role": "Wicket-keeper",
-        "rating": 96,
-        "price": 9.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
-        "formGuide": "W/W/W/L/W",
-        "impactScore": 100,
-        "recentMatchStats": {
-            "highScore": 29,
-            "strikeRate": "139.97",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p20",
-        "name": "Bhuvneshwar Kumar",
-        "team": "SRH",
-        "role": "Bowler",
-        "rating": 87,
-        "price": 5.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
-        "formGuide": "W/L/W/W/L",
-        "impactScore": 90,
-        "recentMatchStats": {
-            "highScore": "N/A",
-            "strikeRate": "N/A",
-            "bestFigures": "1/13",
-            "economyRate": "7.6"
-        }
-    },
-    {
-        "id": "p21",
-        "name": "Sanju Samson",
-        "team": "RR",
-        "role": "Wicket-keeper",
-        "rating": 92,
-        "price": 8.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
-        "formGuide": "L/W/W/L/W",
-        "impactScore": 96,
-        "recentMatchStats": {
-            "highScore": 93,
-            "strikeRate": "160.96",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p22",
-        "name": "Yashasvi Jaiswal",
-        "team": "RR",
-        "role": "Batter",
-        "rating": 94,
-        "price": 9,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
-        "formGuide": "L/W/W/L/W",
-        "impactScore": 97,
-        "recentMatchStats": {
-            "highScore": 85,
-            "strikeRate": "157.52",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p23",
-        "name": "Jos Buttler",
-        "team": "RR",
-        "role": "Wicket-keeper",
-        "rating": 95,
-        "price": 10,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
-        "formGuide": "L/L/W/W/W",
-        "impactScore": 96,
-        "recentMatchStats": {
-            "highScore": 43,
-            "strikeRate": "173.46",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p24",
-        "name": "Yuzvendra Chahal",
-        "team": "RR",
-        "role": "Bowler",
-        "rating": 91,
-        "price": 7.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
-        "formGuide": "W/W/W/L/W",
-        "impactScore": 92,
-        "recentMatchStats": {
-            "highScore": "N/A",
-            "strikeRate": "N/A",
-            "bestFigures": "3/21",
-            "economyRate": "7.3"
+        },
+        "background": "Dynamic three-dimensional player capable of changing the game with both bat and ball.",
+        "strengths": [
+            "Excellent fielder",
+            "Breaks crucial partnerships"
+        ],
+        "weaknesses": [
+            "Takes time to settle",
+            "Prone to injuries"
+        ],
+        "prosCons": {
+            "pro": "Provides immense flexibility",
+            "con": "Often overworked in high-pressure games"
         }
     },
     {
@@ -442,7 +475,7 @@
         "team": "DC",
         "role": "Wicket-keeper",
         "rating": 93,
-        "price": 9.5,
+        "price": 11,
         "image": "/assets/pant.jpg",
         "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
         "formGuide": "L/W/W/L/W",
@@ -452,24 +485,112 @@
             "strikeRate": "155.93",
             "bestFigures": "N/A",
             "economyRate": "N/A"
+        },
+        "background": "Agile behind the stumps and destructive in front of them.",
+        "strengths": [
+            "Explosive finisher",
+            "Anchors the innings"
+        ],
+        "weaknesses": [
+            "Struggles with extreme pace",
+            "Inconsistent glovework on turning tracks"
+        ],
+        "prosCons": {
+            "pro": "Solves two team roles",
+            "con": "High physical fatigue during tournaments"
         }
     },
     {
-        "id": "p26",
-        "name": "Axar Patel",
-        "team": "DC",
-        "role": "All-rounder",
-        "rating": 90,
-        "price": 7,
+        "id": "p2",
+        "name": "Ruturaj Gaikwad",
+        "team": "CSK",
+        "role": "Batter",
+        "rating": 92,
+        "price": 9,
         "image": "/assets/avatar.jpg",
-        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
+        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
         "formGuide": "L/L/W/W/W",
-        "impactScore": 90,
+        "impactScore": 95,
         "recentMatchStats": {
-            "highScore": 21,
-            "strikeRate": "165.72",
-            "bestFigures": "2/17",
-            "economyRate": "7.6"
+            "highScore": 69,
+            "strikeRate": "139.97",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Coming off a spectacular domestic season, looking to solidify the top order.",
+        "strengths": [
+            "Excellent runner between wickets",
+            "High Strike Rate against Spin"
+        ],
+        "weaknesses": [
+            "Struggles against left-arm pace",
+            "Vulnerable to Short Balls"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "Takes an over to settle in"
+        }
+    },
+    {
+        "id": "p16",
+        "name": "Mitchell Starc",
+        "team": "KKR",
+        "role": "Bowler",
+        "rating": 92,
+        "price": 8,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
+        "formGuide": "L/L/W/W/W",
+        "impactScore": 93,
+        "recentMatchStats": {
+            "highScore": "N/A",
+            "strikeRate": "N/A",
+            "bestFigures": "1/27",
+            "economyRate": "8.7"
+        },
+        "background": "Mystery spinner who thrives in pressure situations during the middle overs.",
+        "strengths": [
+            "Sharp turn and bounce",
+            "Economical in Powerplay"
+        ],
+        "weaknesses": [
+            "Less effective on flat pitches",
+            "Struggles with no-balls"
+        ],
+        "prosCons": {
+            "pro": "Guaranteed 4 overs",
+            "con": "Can be targeted by left-handers"
+        }
+    },
+    {
+        "id": "p21",
+        "name": "Sanju Samson",
+        "team": "RR",
+        "role": "Wicket-keeper",
+        "rating": 92,
+        "price": 10,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
+        "formGuide": "L/W/W/L/W",
+        "impactScore": 96,
+        "recentMatchStats": {
+            "highScore": 93,
+            "strikeRate": "160.96",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Agile behind the stumps and destructive in front of them.",
+        "strengths": [
+            "Great DRS judge",
+            "Explosive finisher"
+        ],
+        "weaknesses": [
+            "Struggles with extreme pace",
+            "Inconsistent glovework on turning tracks"
+        ],
+        "prosCons": {
+            "pro": "Solves two team roles",
+            "con": "High physical fatigue during tournaments"
         }
     },
     {
@@ -488,96 +609,19 @@
             "strikeRate": "N/A",
             "bestFigures": "3/18",
             "economyRate": "8.1"
-        }
-    },
-    {
-        "id": "p28",
-        "name": "Jake Fraser-McGurk",
-        "team": "DC",
-        "role": "Batter",
-        "rating": 89,
-        "price": 6.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
-        "formGuide": "W/L/W/W/L",
-        "impactScore": 89,
-        "recentMatchStats": {
-            "highScore": 64,
-            "strikeRate": "149.44",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p29",
-        "name": "Shikhar Dhawan",
-        "team": "PBKS",
-        "role": "Batter",
-        "rating": 86,
-        "price": 5.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
-        "formGuide": "L/L/W/W/W",
-        "impactScore": 89,
-        "recentMatchStats": {
-            "highScore": 69,
-            "strikeRate": "150.58",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p30",
-        "name": "Sam Curran",
-        "team": "PBKS",
-        "role": "All-rounder",
-        "rating": 88,
-        "price": 8.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
-        "formGuide": "L/L/W/W/W",
-        "impactScore": 90,
-        "recentMatchStats": {
-            "highScore": 21,
-            "strikeRate": "162.05",
-            "bestFigures": "2/25",
-            "economyRate": "9.0"
-        }
-    },
-    {
-        "id": "p31",
-        "name": "Arshdeep Singh",
-        "team": "PBKS",
-        "role": "Bowler",
-        "rating": 90,
-        "price": 7,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
-        "formGuide": "L/W/W/L/W",
-        "impactScore": 91,
-        "recentMatchStats": {
-            "highScore": "N/A",
-            "strikeRate": "N/A",
-            "bestFigures": "1/18",
-            "economyRate": "7.1"
-        }
-    },
-    {
-        "id": "p32",
-        "name": "Liam Livingstone",
-        "team": "PBKS",
-        "role": "All-rounder",
-        "rating": 89,
-        "price": 7.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
-        "formGuide": "W/L/W/W/L",
-        "impactScore": 89,
-        "recentMatchStats": {
-            "highScore": 47,
-            "strikeRate": "133.44",
-            "bestFigures": "3/29",
-            "economyRate": "8.7"
+        },
+        "background": "Pace sensation ready to rattle the stumps in the death overs.",
+        "strengths": [
+            "Lethal Yorker",
+            "Deceptive slower ball"
+        ],
+        "weaknesses": [
+            "Struggles with no-balls",
+            "Predictable length"
+        ],
+        "prosCons": {
+            "pro": "Guaranteed 4 overs",
+            "con": "Can be targeted by left-handers"
         }
     },
     {
@@ -586,7 +630,7 @@
         "team": "LSG",
         "role": "Wicket-keeper",
         "rating": 92,
-        "price": 10,
+        "price": 11,
         "image": "/assets/avatar.jpg",
         "aiInsight": "Aggressive Opener. Fearless Powerplay hitter with explosive scoring capability.",
         "formGuide": "W/L/W/W/L",
@@ -598,114 +642,19 @@
             "economyRate": "N/A",
             "runs": 433,
             "matches": 9
-        }
-    },
-    {
-        "id": "p34",
-        "name": "Nicholas Pooran",
-        "team": "LSG",
-        "role": "Wicket-keeper",
-        "rating": 94,
-        "price": 9.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
-        "formGuide": "W/L/W/W/L",
-        "impactScore": 94,
-        "recentMatchStats": {
-            "highScore": 92,
-            "strikeRate": "157.58",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p35",
-        "name": "Marcus Stoinis",
-        "team": "LSG",
-        "role": "All-rounder",
-        "rating": 89,
-        "price": 8,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
-        "formGuide": "W/L/W/W/L",
-        "impactScore": 90,
-        "recentMatchStats": {
-            "highScore": 28,
-            "strikeRate": "130.85",
-            "bestFigures": "3/15",
-            "economyRate": "8.4"
-        }
-    },
-    {
-        "id": "p36",
-        "name": "Ravi Bishnoi",
-        "team": "LSG",
-        "role": "Bowler",
-        "rating": 88,
-        "price": 6,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
-        "formGuide": "W/L/W/W/L",
-        "impactScore": 92,
-        "recentMatchStats": {
-            "highScore": "N/A",
-            "strikeRate": "N/A",
-            "bestFigures": "1/22",
-            "economyRate": "8.0"
-        }
-    },
-    {
-        "id": "p37",
-        "name": "Shubman Gill",
-        "team": "GT",
-        "role": "Batter",
-        "rating": 95,
-        "price": 10,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
-        "formGuide": "W/L/W/W/L",
-        "impactScore": 98,
-        "recentMatchStats": {
-            "highScore": 52,
-            "strikeRate": "154.09",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p38",
-        "name": "Rashid Khan",
-        "team": "GT",
-        "role": "Bowler",
-        "rating": 96,
-        "price": 10.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
-        "formGuide": "W/W/W/L/W",
-        "impactScore": 97,
-        "recentMatchStats": {
-            "highScore": "N/A",
-            "strikeRate": "N/A",
-            "bestFigures": "1/16",
-            "economyRate": "7.8"
-        }
-    },
-    {
-        "id": "p39",
-        "name": "Sai Sudharsan",
-        "team": "GT",
-        "role": "Batter",
-        "rating": 89,
-        "price": 6.5,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
-        "formGuide": "L/L/W/W/W",
-        "impactScore": 90,
-        "recentMatchStats": {
-            "highScore": 85,
-            "strikeRate": "158.20",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
+        },
+        "background": "Experienced leader who controls the game tempo from the back.",
+        "strengths": [
+            "Lightning fast stumpings",
+            "Explosive finisher"
+        ],
+        "weaknesses": [
+            "Struggles with extreme pace",
+            "Low strike rate in middle overs"
+        ],
+        "prosCons": {
+            "pro": "Solves two team roles",
+            "con": "High physical fatigue during tournaments"
         }
     },
     {
@@ -724,78 +673,577 @@
             "strikeRate": "N/A",
             "bestFigures": "3/29",
             "economyRate": "9.3"
+        },
+        "background": "Experienced seamer with an uncanny ability to strike in the powerplay.",
+        "strengths": [
+            "Deceptive slower ball",
+            "Sharp turn and bounce"
+        ],
+        "weaknesses": [
+            "Less effective on flat pitches",
+            "Struggles with no-balls"
+        ],
+        "prosCons": {
+            "pro": "Guaranteed 4 overs",
+            "con": "Can be targeted by left-handers"
         }
     },
     {
-        "id": "p41",
-        "name": "Suyash Sharma",
+        "id": "p15",
+        "name": "Rinku Singh",
         "team": "KKR",
+        "role": "Batter",
+        "rating": 91,
+        "price": 10.5,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
+        "formGuide": "L/W/W/L/W",
+        "impactScore": 95,
+        "recentMatchStats": {
+            "highScore": 69,
+            "strikeRate": "144.14",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Coming off a spectacular domestic season, looking to solidify the top order.",
+        "strengths": [
+            "Strong on the off-side",
+            "Excellent runner between wickets"
+        ],
+        "weaknesses": [
+            "Vulnerable to Short Balls",
+            "Slow starter"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "Takes an over to settle in"
+        }
+    },
+    {
+        "id": "p24",
+        "name": "Yuzvendra Chahal",
+        "team": "RR",
         "role": "Bowler",
-        "rating": 78,
-        "price": 2.5,
+        "rating": 91,
+        "price": 8,
         "image": "/assets/avatar.jpg",
         "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
-        "formGuide": "W/L/W/W/L",
-        "impactScore": 80,
+        "formGuide": "W/W/W/L/W",
+        "impactScore": 92,
         "recentMatchStats": {
             "highScore": "N/A",
             "strikeRate": "N/A",
-            "bestFigures": "2/18",
-            "economyRate": "8.7"
+            "bestFigures": "3/21",
+            "economyRate": "7.3"
+        },
+        "background": "Pace sensation ready to rattle the stumps in the death overs.",
+        "strengths": [
+            "Economical in Powerplay",
+            "Deceptive slower ball"
+        ],
+        "weaknesses": [
+            "Less effective on flat pitches",
+            "Can leak runs in death overs"
+        ],
+        "prosCons": {
+            "pro": "Guaranteed 4 overs",
+            "con": "Can be targeted by left-handers"
         }
     },
     {
-        "id": "p42",
-        "name": "Nehal Wadhera",
-        "team": "MI",
-        "role": "Batter",
-        "rating": 80,
-        "price": 3,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
-        "formGuide": "W/L/W/W/L",
-        "impactScore": 84,
-        "recentMatchStats": {
-            "highScore": 77,
-            "strikeRate": "156.25",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p43",
-        "name": "Dhruv Jurel",
-        "team": "RR",
-        "role": "Wicket-keeper",
-        "rating": 82,
-        "price": 4,
-        "image": "/assets/avatar.jpg",
-        "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
-        "formGuide": "W/L/W/W/L",
-        "impactScore": 86,
-        "recentMatchStats": {
-            "highScore": 75,
-            "strikeRate": "135.27",
-            "bestFigures": "N/A",
-            "economyRate": "N/A"
-        }
-    },
-    {
-        "id": "p44",
-        "name": "Ramandeep Singh",
-        "team": "KKR",
+        "id": "p10",
+        "name": "Glenn Maxwell",
+        "team": "RCB",
         "role": "All-rounder",
-        "rating": 79,
-        "price": 3,
+        "rating": 90,
+        "price": 9.5,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
+        "formGuide": "L/W/W/L/W",
+        "impactScore": 90,
+        "recentMatchStats": {
+            "highScore": 49,
+            "strikeRate": "139.79",
+            "bestFigures": "3/20",
+            "economyRate": "8.9"
+        },
+        "background": "Explosive finisher and utility medium-pacer crucial for team balance.",
+        "strengths": [
+            "Breaks crucial partnerships",
+            "Clears the ropes easily"
+        ],
+        "weaknesses": [
+            "Sometimes expensive with the ball",
+            "Prone to injuries"
+        ],
+        "prosCons": {
+            "pro": "Provides immense flexibility",
+            "con": "Often overworked in high-pressure games"
+        }
+    },
+    {
+        "id": "p26",
+        "name": "Axar Patel",
+        "team": "DC",
+        "role": "All-rounder",
+        "rating": 90,
+        "price": 10,
         "image": "/assets/avatar.jpg",
         "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
         "formGuide": "L/L/W/W/W",
-        "impactScore": 83,
+        "impactScore": 90,
         "recentMatchStats": {
-            "highScore": 45,
-            "strikeRate": "150.67",
-            "bestFigures": "1/23",
-            "economyRate": "6.5"
+            "highScore": 21,
+            "strikeRate": "165.72",
+            "bestFigures": "2/17",
+            "economyRate": "7.6"
+        },
+        "background": "Reliable middle-order anchor who can deliver 4 tight overs of spin.",
+        "strengths": [
+            "Breaks crucial partnerships",
+            "Excellent fielder"
+        ],
+        "weaknesses": [
+            "Takes time to settle",
+            "Prone to injuries"
+        ],
+        "prosCons": {
+            "pro": "Provides immense flexibility",
+            "con": "Often overworked in high-pressure games"
+        }
+    },
+    {
+        "id": "p31",
+        "name": "Arshdeep Singh",
+        "team": "PBKS",
+        "role": "Bowler",
+        "rating": 90,
+        "price": 10.5,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
+        "formGuide": "L/W/W/L/W",
+        "impactScore": 91,
+        "recentMatchStats": {
+            "highScore": "N/A",
+            "strikeRate": "N/A",
+            "bestFigures": "1/18",
+            "economyRate": "7.1"
+        },
+        "background": "Experienced seamer with an uncanny ability to strike in the powerplay.",
+        "strengths": [
+            "Economical in Powerplay",
+            "Lethal Yorker"
+        ],
+        "weaknesses": [
+            "Less effective on flat pitches",
+            "Struggles with no-balls"
+        ],
+        "prosCons": {
+            "pro": "Guaranteed 4 overs",
+            "con": "Can be targeted by left-handers"
+        }
+    },
+    {
+        "id": "p4",
+        "name": "Matheesha Pathirana",
+        "team": "CSK",
+        "role": "Bowler",
+        "rating": 89,
+        "price": 10,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
+        "formGuide": "L/L/W/W/W",
+        "impactScore": 93,
+        "recentMatchStats": {
+            "highScore": "N/A",
+            "strikeRate": "N/A",
+            "bestFigures": "2/25",
+            "economyRate": "8.4"
+        },
+        "background": "Experienced seamer with an uncanny ability to strike in the powerplay.",
+        "strengths": [
+            "Sharp turn and bounce",
+            "Lethal Yorker"
+        ],
+        "weaknesses": [
+            "Can leak runs in death overs",
+            "Predictable length"
+        ],
+        "prosCons": {
+            "pro": "Guaranteed 4 overs",
+            "con": "Can be targeted by left-handers"
+        }
+    },
+    {
+        "id": "p13",
+        "name": "Shreyas Iyer",
+        "team": "KKR",
+        "role": "Batter",
+        "rating": 89,
+        "price": 11,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
+        "formGuide": "L/W/W/L/W",
+        "impactScore": 93,
+        "recentMatchStats": {
+            "highScore": 98,
+            "strikeRate": "131.30",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Coming off a spectacular domestic season, looking to solidify the top order.",
+        "strengths": [
+            "Powerplay dominator",
+            "Strong on the off-side"
+        ],
+        "weaknesses": [
+            "Prone to risky shots",
+            "Struggles against left-arm pace"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "Takes an over to settle in"
+        }
+    },
+    {
+        "id": "p28",
+        "name": "Jake Fraser-McGurk",
+        "team": "DC",
+        "role": "Batter",
+        "rating": 89,
+        "price": 8.5,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
+        "formGuide": "W/L/W/W/L",
+        "impactScore": 89,
+        "recentMatchStats": {
+            "highScore": 64,
+            "strikeRate": "149.44",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Coming off a spectacular domestic season, looking to solidify the top order.",
+        "strengths": [
+            "Powerplay dominator",
+            "Strong on the off-side"
+        ],
+        "weaknesses": [
+            "Prone to risky shots",
+            "Struggles against left-arm pace"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "Takes an over to settle in"
+        }
+    },
+    {
+        "id": "p32",
+        "name": "Liam Livingstone",
+        "team": "PBKS",
+        "role": "All-rounder",
+        "rating": 89,
+        "price": 5.5,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
+        "formGuide": "W/L/W/W/L",
+        "impactScore": 89,
+        "recentMatchStats": {
+            "highScore": 47,
+            "strikeRate": "133.44",
+            "bestFigures": "3/29",
+            "economyRate": "8.7"
+        },
+        "background": "Dynamic three-dimensional player capable of changing the game with both bat and ball.",
+        "strengths": [
+            "Dual threat match-winner",
+            "Excellent fielder"
+        ],
+        "weaknesses": [
+            "Sometimes expensive with the ball",
+            "Takes time to settle"
+        ],
+        "prosCons": {
+            "pro": "Provides immense flexibility",
+            "con": "Often overworked in high-pressure games"
+        }
+    },
+    {
+        "id": "p35",
+        "name": "Marcus Stoinis",
+        "team": "LSG",
+        "role": "All-rounder",
+        "rating": 89,
+        "price": 4,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
+        "formGuide": "W/L/W/W/L",
+        "impactScore": 90,
+        "recentMatchStats": {
+            "highScore": 28,
+            "strikeRate": "130.85",
+            "bestFigures": "3/15",
+            "economyRate": "8.4"
+        },
+        "background": "Dynamic three-dimensional player capable of changing the game with both bat and ball.",
+        "strengths": [
+            "Dual threat match-winner",
+            "Excellent fielder"
+        ],
+        "weaknesses": [
+            "Inconsistent batting form",
+            "Takes time to settle"
+        ],
+        "prosCons": {
+            "pro": "Provides immense flexibility",
+            "con": "Often overworked in high-pressure games"
+        }
+    },
+    {
+        "id": "p39",
+        "name": "Sai Sudharsan",
+        "team": "GT",
+        "role": "Batter",
+        "rating": 89,
+        "price": 6.5,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
+        "formGuide": "L/L/W/W/W",
+        "impactScore": 90,
+        "recentMatchStats": {
+            "highScore": 85,
+            "strikeRate": "158.20",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Coming off a spectacular domestic season, looking to solidify the top order.",
+        "strengths": [
+            "Strong on the off-side",
+            "Powerplay dominator"
+        ],
+        "weaknesses": [
+            "Prone to risky shots",
+            "Vulnerable to Short Balls"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "Takes an over to settle in"
+        }
+    },
+    {
+        "id": "p1",
+        "name": "MS Dhoni",
+        "team": "CSK",
+        "role": "Wicket-keeper",
+        "rating": 88,
+        "price": 4,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
+        "formGuide": "L/L/W/W/W",
+        "impactScore": 92,
+        "recentMatchStats": {
+            "highScore": 88,
+            "strikeRate": "166.41",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Agile behind the stumps and destructive in front of them.",
+        "strengths": [
+            "Explosive finisher",
+            "Great DRS judge"
+        ],
+        "weaknesses": [
+            "Inconsistent glovework on turning tracks",
+            "Struggles with extreme pace"
+        ],
+        "prosCons": {
+            "pro": "Solves two team roles",
+            "con": "High physical fatigue during tournaments"
+        }
+    },
+    {
+        "id": "p11",
+        "name": "Mohammed Siraj",
+        "team": "RCB",
+        "role": "Bowler",
+        "rating": 88,
+        "price": 7,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
+        "formGuide": "W/L/W/W/L",
+        "impactScore": 92,
+        "recentMatchStats": {
+            "highScore": "N/A",
+            "strikeRate": "N/A",
+            "bestFigures": "2/19",
+            "economyRate": "7.8"
+        },
+        "background": "Pace sensation ready to rattle the stumps in the death overs.",
+        "strengths": [
+            "Deceptive slower ball",
+            "Lethal Yorker"
+        ],
+        "weaknesses": [
+            "Can leak runs in death overs",
+            "Less effective on flat pitches"
+        ],
+        "prosCons": {
+            "pro": "Guaranteed 4 overs",
+            "con": "Can be targeted by left-handers"
+        }
+    },
+    {
+        "id": "p30",
+        "name": "Sam Curran",
+        "team": "PBKS",
+        "role": "All-rounder",
+        "rating": 88,
+        "price": 7.5,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
+        "formGuide": "L/L/W/W/W",
+        "impactScore": 90,
+        "recentMatchStats": {
+            "highScore": 21,
+            "strikeRate": "162.05",
+            "bestFigures": "2/25",
+            "economyRate": "9.0"
+        },
+        "background": "Explosive finisher and utility medium-pacer crucial for team balance.",
+        "strengths": [
+            "Dual threat match-winner",
+            "Breaks crucial partnerships"
+        ],
+        "weaknesses": [
+            "Inconsistent batting form",
+            "Sometimes expensive with the ball"
+        ],
+        "prosCons": {
+            "pro": "Provides immense flexibility",
+            "con": "Often overworked in high-pressure games"
+        }
+    },
+    {
+        "id": "p36",
+        "name": "Ravi Bishnoi",
+        "team": "LSG",
+        "role": "Bowler",
+        "rating": 88,
+        "price": 4,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
+        "formGuide": "W/L/W/W/L",
+        "impactScore": 92,
+        "recentMatchStats": {
+            "highScore": "N/A",
+            "strikeRate": "N/A",
+            "bestFigures": "1/22",
+            "economyRate": "8.0"
+        },
+        "background": "Pace sensation ready to rattle the stumps in the death overs.",
+        "strengths": [
+            "Lethal Yorker",
+            "Deceptive slower ball"
+        ],
+        "weaknesses": [
+            "Can leak runs in death overs",
+            "Less effective on flat pitches"
+        ],
+        "prosCons": {
+            "pro": "Guaranteed 4 overs",
+            "con": "Can be targeted by left-handers"
+        }
+    },
+    {
+        "id": "p20",
+        "name": "Bhuvneshwar Kumar",
+        "team": "SRH",
+        "role": "Bowler",
+        "rating": 87,
+        "price": 4.5,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
+        "formGuide": "W/L/W/W/L",
+        "impactScore": 90,
+        "recentMatchStats": {
+            "highScore": "N/A",
+            "strikeRate": "N/A",
+            "bestFigures": "1/13",
+            "economyRate": "7.6"
+        },
+        "background": "Experienced seamer with an uncanny ability to strike in the powerplay.",
+        "strengths": [
+            "Sharp turn and bounce",
+            "Economical in Powerplay"
+        ],
+        "weaknesses": [
+            "Predictable length",
+            "Less effective on flat pitches"
+        ],
+        "prosCons": {
+            "pro": "Guaranteed 4 overs",
+            "con": "Can be targeted by left-handers"
+        }
+    },
+    {
+        "id": "p29",
+        "name": "Shikhar Dhawan",
+        "team": "PBKS",
+        "role": "Batter",
+        "rating": 86,
+        "price": 5.5,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
+        "formGuide": "L/L/W/W/W",
+        "impactScore": 89,
+        "recentMatchStats": {
+            "highScore": 69,
+            "strikeRate": "150.58",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "A seasoned veteran bringing aggressive intent and stability to the crease.",
+        "strengths": [
+            "Powerplay dominator",
+            "Strong on the off-side"
+        ],
+        "weaknesses": [
+            "Vulnerable to Short Balls",
+            "Prone to risky shots"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "Takes an over to settle in"
+        }
+    },
+    {
+        "id": "p12",
+        "name": "Rajat Patidar",
+        "team": "RCB",
+        "role": "Batter",
+        "rating": 85,
+        "price": 7,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
+        "formGuide": "L/W/W/L/W",
+        "impactScore": 89,
+        "recentMatchStats": {
+            "highScore": 23,
+            "strikeRate": "168.48",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "A seasoned veteran bringing aggressive intent and stability to the crease.",
+        "strengths": [
+            "High Strike Rate against Spin",
+            "Excellent runner between wickets"
+        ],
+        "weaknesses": [
+            "Prone to risky shots",
+            "Struggles against left-arm pace"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "Takes an over to settle in"
         }
     },
     {
@@ -804,7 +1252,7 @@
         "team": "RR",
         "role": "Batter",
         "rating": 84,
-        "price": 3.5,
+        "price": 6,
         "image": "/assets/avatar.jpg",
         "aiInsight": "Young Prodigy. High-risk, high-reward striker with incredible raw talent at age 15.",
         "formGuide": "W/W/L/W/W",
@@ -815,6 +1263,143 @@
             "bestFigures": "N/A",
             "economyRate": "N/A",
             "runs": 404
+        },
+        "background": "A seasoned veteran bringing aggressive intent and stability to the crease.",
+        "strengths": [
+            "Strong on the off-side",
+            "Powerplay dominator"
+        ],
+        "weaknesses": [
+            "Prone to risky shots",
+            "Slow starter"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "Takes an over to settle in"
+        }
+    },
+    {
+        "id": "p43",
+        "name": "Dhruv Jurel",
+        "team": "RR",
+        "role": "Wicket-keeper",
+        "rating": 82,
+        "price": 5,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Safe hands behind the stumps combined with a high-strike-rate batting approach to maximize fielding restrictions.",
+        "formGuide": "W/L/W/W/L",
+        "impactScore": 86,
+        "recentMatchStats": {
+            "highScore": 75,
+            "strikeRate": "135.27",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Agile behind the stumps and destructive in front of them.",
+        "strengths": [
+            "Explosive finisher",
+            "Lightning fast stumpings"
+        ],
+        "weaknesses": [
+            "Struggles with extreme pace",
+            "Poor communication while running"
+        ],
+        "prosCons": {
+            "pro": "Solves two team roles",
+            "con": "High physical fatigue during tournaments"
+        }
+    },
+    {
+        "id": "p42",
+        "name": "Nehal Wadhera",
+        "team": "MI",
+        "role": "Batter",
+        "rating": 80,
+        "price": 5,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Reliable top-order anchor capable of massive boundary hitting. Offers excellent stability during middle overs.",
+        "formGuide": "W/L/W/W/L",
+        "impactScore": 84,
+        "recentMatchStats": {
+            "highScore": 77,
+            "strikeRate": "156.25",
+            "bestFigures": "N/A",
+            "economyRate": "N/A"
+        },
+        "background": "Coming off a spectacular domestic season, looking to solidify the top order.",
+        "strengths": [
+            "Strong on the off-side",
+            "High Strike Rate against Spin"
+        ],
+        "weaknesses": [
+            "Vulnerable to Short Balls",
+            "Prone to risky shots"
+        ],
+        "prosCons": {
+            "pro": "Top-order anchor",
+            "con": "Takes an over to settle in"
+        }
+    },
+    {
+        "id": "p44",
+        "name": "Ramandeep Singh",
+        "team": "KKR",
+        "role": "All-rounder",
+        "rating": 79,
+        "price": 4,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Versatile match-winner. Provides crucial breakthroughs with the ball and explosive late-order finishing.",
+        "formGuide": "L/L/W/W/W",
+        "impactScore": 83,
+        "recentMatchStats": {
+            "highScore": 45,
+            "strikeRate": "150.67",
+            "bestFigures": "1/23",
+            "economyRate": "6.5"
+        },
+        "background": "Dynamic three-dimensional player capable of changing the game with both bat and ball.",
+        "strengths": [
+            "Dual threat match-winner",
+            "Excellent fielder"
+        ],
+        "weaknesses": [
+            "Sometimes expensive with the ball",
+            "Inconsistent batting form"
+        ],
+        "prosCons": {
+            "pro": "Provides immense flexibility",
+            "con": "Often overworked in high-pressure games"
+        }
+    },
+    {
+        "id": "p41",
+        "name": "Suyash Sharma",
+        "team": "KKR",
+        "role": "Bowler",
+        "rating": 78,
+        "price": 7,
+        "image": "/assets/avatar.jpg",
+        "aiInsight": "Lethal variation and excellent control. Generates significant swing and maintains pressure in the death overs.",
+        "formGuide": "W/L/W/W/L",
+        "impactScore": 80,
+        "recentMatchStats": {
+            "highScore": "N/A",
+            "strikeRate": "N/A",
+            "bestFigures": "2/18",
+            "economyRate": "8.7"
+        },
+        "background": "Mystery spinner who thrives in pressure situations during the middle overs.",
+        "strengths": [
+            "Lethal Yorker",
+            "Deceptive slower ball"
+        ],
+        "weaknesses": [
+            "Can leak runs in death overs",
+            "Predictable length"
+        ],
+        "prosCons": {
+            "pro": "Guaranteed 4 overs",
+            "con": "Can be targeted by left-handers"
         }
     }
 ]

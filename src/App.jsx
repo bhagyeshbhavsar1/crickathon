@@ -6,6 +6,7 @@ import PitchView from './pages/PitchView';
 import TeamAnalytics from './pages/TeamAnalytics';
 import AICoach from './pages/AICoach';
 import HistoryVault from './pages/HistoryVault';
+import PlayersLibrary from './pages/PlayersLibrary';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<DraftPool />} />
           <Route path="pitch" element={<PitchView />} />
           <Route path="analytics" element={<TeamAnalytics />} />
+          <Route path="library" element={<PlayersLibrary />} />
           <Route path="ai-coach" element={<AICoach />} />
           <Route path="history" element={<HistoryVault />} />
         </Route>

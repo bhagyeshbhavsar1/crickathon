@@ -31,6 +31,9 @@ const Layout = () => {
                         <Link to="/analytics" className={`flex items-center gap-1 md:gap-2 px-2 md:px-3 py-2 rounded-lg transition-all font-['Inter'] text-xs md:text-sm font-medium whitespace-nowrap ${location.pathname === '/analytics' ? 'text-red-600 font-bold bg-red-50' : 'text-slate-600 hover:bg-slate-50 hover:text-red-600'}`}>
                             <span className="material-symbols-outlined text-sm md:text-base">analytics</span> <span className="hidden lg:inline">Analytics</span>
                         </Link>
+                        <Link to="/library" className={`flex items-center gap-1 md:gap-2 px-2 md:px-3 py-2 rounded-lg transition-all font-['Inter'] text-xs md:text-sm font-medium whitespace-nowrap ${location.pathname === '/library' ? 'text-red-600 font-bold bg-red-50' : 'text-slate-600 hover:bg-slate-50 hover:text-red-600'}`}>
+                            <span className="material-symbols-outlined text-sm md:text-base">library_books</span> <span className="hidden lg:inline">Library</span>
+                        </Link>
                         <Link to="/ai-coach" className={`flex items-center gap-1 md:gap-2 px-2 md:px-3 py-2 rounded-lg transition-all font-['Inter'] text-xs md:text-sm font-medium whitespace-nowrap ${location.pathname === '/ai-coach' ? 'text-red-600 font-bold bg-red-50' : 'text-slate-600 hover:bg-slate-50 hover:text-red-600'}`}>
                             <span className="material-symbols-outlined text-sm md:text-base">smart_toy</span> <span className="hidden lg:inline">AI Coach</span>
                         </Link>
